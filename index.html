@@ -4,18 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="MPT Consultoria. Inteligencia artificial y automatización de procesos administrativos para autónomos y pequeñas empresas.">
-
-  <title>MPT Consultoria | IA y Automatización</title>
+  <meta name="description" content="MPT Consultoria. Soluciones concretas de automatización y gestión administrativa para autónomos y pequeñas empresas.">
+  <meta name="theme-color" content="#ffffff">
+  <title>MPT Consultoria | Automatización y gestión administrativa</title>
 
   <style>
     :root {
-      --navy: #142d46;
-      --blue: #247ba0;
-      --turquoise: #48b8bd;
-      --light: #f3f8fa;
-      --text: #34495e;
+      --ink: #292d2d;
+      --muted: #707575;
+      --green: #58766e;
+      --green-dark: #405e56;
+      --cream: #f5f4f0;
+      --line: #e9e8e3;
+      --white: #ffffff;
+      --max: 1200px;
     }
 
     * {
@@ -24,195 +26,636 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--white);
       line-height: 1.7;
-      background: white;
     }
 
-    header {
-      padding: 10px 8%;
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), 88%);
+      margin: 0 auto;
+    }
+
+    /* CABECERA FIJA */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 88px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 25px;
-      border-bottom: 1px solid #e8eef2;
-      background: white;
+      justify-content: space-between;
+      gap: 28px;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      text-decoration: none;
       flex-shrink: 0;
     }
 
     .brand-logo {
-      display: block;
-      width: 185px;
+      width: 190px;
       height: auto;
-      object-fit: contain;
     }
 
-    nav {
+    .main-nav {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
+      gap: 30px;
     }
 
-    nav a {
-      color: var(--navy);
+    .main-nav a {
       text-decoration: none;
-      margin-left: 22px;
-      font-size: 14px;
+      color: #454b49;
+      font-size: 13px;
       font-weight: 600;
+      transition: color .2s ease;
     }
 
-    nav a:hover {
-      color: var(--turquoise);
+    .main-nav a:hover {
+      color: var(--green);
     }
 
     .language {
+      display: flex;
+      align-items: center;
+      gap: 7px;
       white-space: nowrap;
+      font-size: 13px;
     }
 
     .language button {
       border: 0;
-      background: none;
+      background: transparent;
+      color: #777;
       cursor: pointer;
-      color: var(--blue);
-      font-weight: bold;
-      font-size: 14px;
+      padding: 6px 3px;
+      font-weight: 600;
     }
 
-    .hero {
-      padding: 100px 8%;
-      background: linear-gradient(120deg, #f3f8fa, #e7f4f5);
-      text-align: center;
+    .language button.active {
+      color: var(--green-dark);
+      text-decoration: underline;
+      text-underline-offset: 5px;
     }
 
-    .hero h1 {
-      color: var(--navy);
-      font-size: clamp(32px, 5vw, 52px);
-      line-height: 1.2;
-      max-width: 850px;
-      margin: 0 auto 25px;
-    }
+    /* ELEMENTOS GENERALES */
 
-    .hero p {
-      max-width: 720px;
-      margin: 0 auto 30px;
-      font-size: 18px;
-    }
-
-    .button {
+    .eyebrow {
       display: inline-block;
-      background: var(--blue);
-      color: white;
-      padding: 13px 27px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.2s ease;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
-    .button:hover {
-      background: var(--navy);
+    h1, h2, h3, p {
+      margin-top: 0;
     }
 
-    section {
-      padding: 75px 8%;
+    h1, h2, h3 {
+      line-height: 1.2;
+      letter-spacing: -0.7px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 600;
     }
 
     h2 {
-      color: var(--navy);
-      font-size: 30px;
-      text-align: center;
-      margin-bottom: 35px;
+      font-size: clamp(30px, 3.5vw, 43px);
+      font-weight: 600;
     }
 
-    .intro {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
+    .section-intro {
+      max-width: 690px;
+      color: var(--muted);
+      font-size: 17px;
     }
 
-    .services {
-      background: var(--light);
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      background: var(--green-dark);
+      color: white;
+      border: 1px solid var(--green-dark);
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      transition: background .2s ease, transform .2s ease;
     }
 
-    .grid {
+    .button:hover {
+      background: #314b44;
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--green-dark);
+    }
+
+    .button-outline:hover {
+      color: white;
+    }
+
+    /* PORTADA */
+
+    .hero {
+      padding: 76px 0 82px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .hero-copy {
+      max-width: 570px;
+    }
+
+    .hero h1 {
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero-copy p {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 520px;
+      margin-bottom: 30px;
+    }
+
+    .hero-image {
+      position: relative;
+      min-height: 470px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 3px;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      right: -18px;
+      bottom: -18px;
+      width: 42%;
+      height: 42%;
+      border: 1px solid #d9ded9;
+      z-index: -1;
+    }
+
+    /* FRANJA DE VALOR */
+
+    .value-strip {
+      background: var(--cream);
+      padding: 24px 0;
+    }
+
+    .value-strip-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       gap: 25px;
     }
 
-    .service {
-      background: white;
-      padding: 28px;
-      border-radius: 9px;
-      border: 1px solid #e5edf0;
+    .value-strip p {
+      margin: 0;
+      font-size: 14px;
+      color: #555d59;
     }
 
-    .service h3 {
-      color: var(--blue);
+    /* PRESENTACIÓN */
+
+    .about {
+      position: relative;
+      overflow: hidden;
+      padding: 110px 0;
+      isolation: isolate;
     }
+
+    .about::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: 2%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(390px, 38vw);
+      height: min(390px, 38vw);
+      background-image: url("Logotipo%20circular%20MPT%20de%20IA%20y%20automatizaci%C3%B3n.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.035;
+      pointer-events: none;
+    }
+
+    .about-content {
+      max-width: 760px;
+    }
+
+    .about-content h2 {
+      max-width: 650px;
+      margin-bottom: 25px;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* SOLUCIONES */
+
+    .solutions {
+      background: var(--cream);
+      padding: 100px 0;
+    }
+
+    .solutions-heading {
+      max-width: 720px;
+      margin-bottom: 48px;
+    }
+
+    .solutions-heading p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .solution-card {
+      background: white;
+      padding: 32px 28px;
+      border: 1px solid #e8e7e1;
+      display: flex;
+      flex-direction: column;
+      min-height: 340px;
+    }
+
+    .solution-number {
+      color: #a4aaa4;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 26px;
+    }
+
+    .solution-card h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .solution-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .deliverable {
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: #59645e;
+      font-size: 13px;
+    }
+
+    .deliverable strong {
+      display: block;
+      color: var(--green-dark);
+      margin-bottom: 5px;
+    }
+
+    /* FORMA DE TRABAJAR */
+
+    .process {
+      padding: 105px 0;
+    }
+
+    .process-heading {
+      max-width: 700px;
+      margin-bottom: 45px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .process-item {
+      border-top: 1px solid #c9d1ca;
+      padding-top: 22px;
+    }
+
+    .process-item span {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .process-item h3 {
+      font-size: 19px;
+      margin: 12px 0;
+    }
+
+    .process-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* IMAGEN Y MENSAJE */
+
+    .human-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 410px;
+      background: var(--cream);
+    }
+
+    .human-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 410px;
+      object-fit: cover;
+    }
+
+    .human-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 65px 12%;
+    }
+
+    .human-copy h2 {
+      font-size: clamp(28px, 3vw, 38px);
+    }
+
+    .human-copy p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* CONTACTO */
 
     .contact {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      padding: 100px 0;
       text-align: center;
-      background: var(--navy);
-      color: white;
     }
 
-    .contact h2 {
-      color: white;
+    .contact::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 370px;
+      height: 370px;
+      background-image: url("Logotipo%20circular%20MPT%20de%20IA%20y%20automatizaci%C3%B3n.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.035;
+      pointer-events: none;
+    }
+
+    .contact-inner {
+      max-width: 720px;
+      margin: 0 auto;
     }
 
     .contact p {
-      max-width: 700px;
-      margin: 0 auto 25px;
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 28px;
     }
+
+    .contact-email {
+      display: block;
+      margin-top: 20px;
+      color: var(--green-dark);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    /* PIE */
 
     footer {
-      padding: 25px 8%;
-      text-align: center;
-      font-size: 13px;
-      color: #718096;
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: #858a86;
+      font-size: 12px;
     }
 
-    @media (max-width: 750px) {
-      header {
-        flex-direction: column;
-        padding: 15px 5%;
-        gap: 10px;
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    footer a {
+      text-decoration: none;
+    }
+
+    /* ADAPTACIÓN A MÓVILES */
+
+    @media (max-width: 850px) {
+      .header-inner {
+        min-height: 76px;
+        gap: 14px;
       }
 
       .brand-logo {
-        width: 165px;
+        width: 155px;
       }
 
-      nav {
+      .main-nav {
+        gap: 15px;
+      }
+
+      .main-nav a {
+        font-size: 12px;
+      }
+
+      .hero-grid {
+        gap: 35px;
+      }
+
+      .hero-image,
+      .hero-image img {
+        min-height: 390px;
+        height: 390px;
+      }
+
+      .solution-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      html {
+        scroll-padding-top: 130px;
+      }
+
+      .container {
+        width: 90%;
+      }
+
+      .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 0 12px;
+        gap: 8px;
+      }
+
+      .brand {
+        width: 100%;
         justify-content: center;
       }
 
-      nav a {
-        margin: 0 10px;
+      .brand-logo {
+        width: 145px;
+      }
+
+      .main-nav {
+        width: 100%;
+        justify-content: center;
+        gap: 17px;
+      }
+
+      .main-nav a {
+        font-size: 11px;
       }
 
       .language {
-        margin-top: 5px;
+        position: absolute;
+        right: 5%;
+        top: 17px;
       }
 
       .hero {
-        padding: 70px 7%;
+        padding: 55px 0 60px;
       }
 
-      section {
-        padding: 60px 7%;
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-image,
+      .hero-image img {
+        min-height: 300px;
+        height: 300px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .value-strip-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .about,
+      .solutions,
+      .process,
+      .contact {
+        padding: 70px 0;
+      }
+
+      .about::before {
+        width: 250px;
+        height: 250px;
+        right: -65px;
+      }
+
+      .solution-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .solution-card {
+        min-height: auto;
+      }
+
+      .human-section {
+        grid-template-columns: 1fr;
+      }
+
+      .human-image img {
+        min-height: 280px;
+        height: 280px;
+      }
+
+      .human-copy {
+        padding: 48px 7%;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
       }
     }
   </style>
@@ -220,183 +663,369 @@
 
 <body>
 
-<header id="top">
+  <header class="site-header">
+    <div class="container header-inner">
 
-  <a class="brand" href="#top" aria-label="MPT Consultoria - Inicio">
-    <img
-      class="brand-logo"
-      src="LOGO_IAconsulting.jpg"
-      alt="MPT Consultoria - IA, automatización y consultoría">
-  </a>
+      <a class="brand" href="#inicio" aria-label="MPT Consultoria - Inicio">
+        <img
+          class="brand-logo"
+          src="LOGO_IAconsulting.jpg"
+          alt="MPT Consultoria">
+      </a>
 
-  <nav>
-    <a href="#about" data-es="Nosotros" data-ca="Nosaltres">Nosotros</a>
-    <a href="#services" data-es="Servicios" data-ca="Serveis">Servicios</a>
-    <a href="#contact" data-es="Contacto" data-ca="Contacte">Contacto</a>
-  </nav>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#nosotros" data-es="Nosotros" data-ca="Nosaltres">Nosotros</a>
+        <a href="#soluciones" data-es="Soluciones" data-ca="Solucions">Soluciones</a>
+        <a href="#metodo" data-es="Cómo trabajamos" data-ca="Com treballem">Cómo trabajamos</a>
+        <a href="#contacto" data-es="Contacto" data-ca="Contacte">Contacto</a>
+      </nav>
 
-  <div class="language">
-    <button onclick="setLanguage('es')">ES</button> |
-    <button onclick="setLanguage('ca')">CA</button>
-  </div>
-
-</header>
-
-<main>
-
-  <div class="hero">
-
-    <h1
-      data-es="Simplificamos la gestión. Impulsamos tu negocio."
-      data-ca="Simplifiquem la gestió. Impulsem el teu negoci.">
-      Simplificamos la gestión. Impulsamos tu negocio.
-    </h1>
-
-    <p
-      data-es="Soluciones de inteligencia artificial y automatización para reducir tareas administrativas repetitivas y ayudarte a trabajar de forma más eficiente."
-      data-ca="Solucions d'intel·ligència artificial i automatització per reduir tasques administratives repetitives i ajudar-te a treballar de manera més eficient.">
-      Soluciones de inteligencia artificial y automatización para reducir tareas administrativas repetitivas y ayudarte a trabajar de forma más eficiente.
-    </p>
-
-    <a
-      class="button"
-      href="#contact"
-      data-es="Solicitar diagnóstico inicial"
-      data-ca="Sol·licitar diagnòstic inicial">
-      Solicitar diagnóstico inicial
-    </a>
-
-  </div>
-
-  <section id="about">
-
-    <div class="intro">
-
-      <h2
-        data-es="Tecnología útil, aplicada a tu día a día"
-        data-ca="Tecnologia útil, aplicada al teu dia a dia">
-        Tecnología útil, aplicada a tu día a día
-      </h2>
-
-      <p
-        data-es="En MPT Consultoria ayudamos a autónomos y pequeñas empresas a identificar oportunidades de mejora en sus procesos administrativos mediante herramientas digitales, inteligencia artificial y automatizaciones prácticas."
-        data-ca="A MPT Consultoria ajudem autònoms i petites empreses a identificar oportunitats de millora en els seus processos administratius mitjançant eines digitals, intel·ligència artificial i automatitzacions pràctiques.">
-        En MPT Consultoria ayudamos a autónomos y pequeñas empresas a identificar oportunidades de mejora en sus procesos administrativos mediante herramientas digitales, inteligencia artificial y automatizaciones prácticas.
-      </p>
-
-    </div>
-
-  </section>
-
-  <section class="services" id="services">
-
-    <h2
-      data-es="Qué podemos hacer por tu negocio"
-      data-ca="Què podem fer pel teu negoci">
-      Qué podemos hacer por tu negocio
-    </h2>
-
-    <div class="grid">
-
-      <div class="service">
-
-        <h3
-          data-es="Gestión documental"
-          data-ca="Gestió documental">
-          Gestión documental
-        </h3>
-
-        <p
-          data-es="Organización, clasificación y extracción de información de documentos."
-          data-ca="Organització, classificació i extracció d'informació de documents.">
-          Organización, clasificación y extracción de información de documentos.
-        </p>
-
-      </div>
-
-      <div class="service">
-
-        <h3
-          data-es="Automatización administrativa"
-          data-ca="Automatització administrativa">
-          Automatización administrativa
-        </h3>
-
-        <p
-          data-es="Conexión de herramientas y reducción de tareas manuales repetitivas."
-          data-ca="Connexió d'eines i reducció de tasques manuals repetitives.">
-          Conexión de herramientas y reducción de tareas manuales repetitivas.
-        </p>
-
-      </div>
-
-      <div class="service">
-
-        <h3
-          data-es="Inteligencia artificial aplicada"
-          data-ca="Intel·ligència artificial aplicada">
-          Inteligencia artificial aplicada
-        </h3>
-
-        <p
-          data-es="Aplicaciones prácticas de IA para analizar, organizar y transformar información."
-          data-ca="Aplicacions pràctiques d'IA per analitzar, organitzar i transformar informació.">
-          Aplicaciones prácticas de IA para analizar, organizar y transformar información.
-        </p>
-
+      <div class="language" aria-label="Selector de idioma">
+        <button type="button" class="active" id="lang-es" onclick="setLanguage('es')">ES</button>
+        <span>|</span>
+        <button type="button" id="lang-ca" onclick="setLanguage('ca')">CA</button>
       </div>
 
     </div>
+  </header>
 
-  </section>
+  <main>
 
-  <section id="contact" class="contact">
+    <!-- PORTADA -->
 
-    <h2
-      data-es="Hablemos de tu negocio"
-      data-ca="Parlem del teu negoci">
-      Hablemos de tu negocio
-    </h2>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
 
-    <p
-      data-es="Cuéntanos qué tareas administrativas te ocupan más tiempo. Podemos realizar un diagnóstico inicial gratuito para identificar posibles oportunidades de automatización."
-      data-ca="Explica'ns quines tasques administratives t'ocupen més temps. Podem fer un diagnòstic inicial gratuït per identificar possibles oportunitats d'automatització.">
-      Cuéntanos qué tareas administrativas te ocupan más tiempo. Podemos realizar un diagnóstico inicial gratuito para identificar posibles oportunidades de automatización.
-    </p>
+        <div class="hero-copy">
+          <span class="eyebrow"
+            data-es="MPT CONSULTORIA"
+            data-ca="MPT CONSULTORIA">MPT CONSULTORIA</span>
 
-    <a
-      class="button"
-      href="mailto:mptiabcn@gmail.com"
-      data-es="Contactar por correo"
-      data-ca="Contactar per correu">
-      Contactar por correo
-    </a>
+          <h1
+            data-es="Menos tareas administrativas. <span>Más tiempo para tu negocio.</span>"
+            data-ca="Menys tasques administratives. <span>Més temps per al teu negoci.</span>">
+            Menos tareas administrativas. <span>Más tiempo para tu negocio.</span>
+          </h1>
 
-  </section>
+          <p
+            data-es="Diseñamos soluciones concretas de organización y automatización para que autónomos y pequeñas empresas puedan dedicar menos tiempo a tareas repetitivas."
+            data-ca="Dissenyem solucions concretes d'organització i automatització perquè autònoms i petites empreses puguin dedicar menys temps a tasques repetitives.">
+            Diseñamos soluciones concretas de organización y automatización para que autónomos y pequeñas empresas puedan dedicar menos tiempo a tareas repetitivas.
+          </p>
 
-</main>
+          <a class="button" href="#soluciones"
+            data-es="Descubre nuestras soluciones"
+            data-ca="Descobreix les nostres solucions">
+            Descubre nuestras soluciones
+          </a>
+        </div>
 
-<footer>
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1758876017801-f5a892ee460a?auto=format&fit=crop&fm=jpg&q=85&w=1600"
+            alt="Profesional trabajando con su ordenador en una oficina luminosa"
+            fetchpriority="high">
+        </div>
 
-  © 2026 MPT Consultoria ·
+      </div>
+    </section>
 
-  <span
-    data-es="Inteligencia artificial y automatización"
-    data-ca="Intel·ligència artificial i automatització">
-    Inteligencia artificial y automatización
-  </span>
+    <div class="value-strip">
+      <div class="container value-strip-inner">
+        <p data-es="Soluciones prácticas, no tecnología por tecnología."
+           data-ca="Solucions pràctiques, no tecnologia per la tecnologia.">
+          Soluciones prácticas, no tecnología por tecnología.
+        </p>
+        <p data-es="Alcance definido · Entregables claros · Revisión humana"
+           data-ca="Abast definit · Lliurables clars · Revisió humana">
+          Alcance definido · Entregables claros · Revisión humana
+        </p>
+      </div>
+    </div>
 
-</footer>
+    <!-- NOSOTROS -->
 
-<script>
-  function setLanguage(lang) {
-    document.documentElement.lang = lang;
+    <section class="about" id="nosotros">
+      <div class="container">
+        <div class="about-content">
 
-    document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-      el.textContent = el.getAttribute('data-' + lang);
-    });
-  }
-</script>
+          <span class="eyebrow"
+            data-es="QUÉ HACEMOS"
+            data-ca="QUÈ FEM">QUÉ HACEMOS</span>
+
+          <h2
+            data-es="La tecnología tiene sentido cuando te facilita el trabajo."
+            data-ca="La tecnologia té sentit quan et facilita la feina.">
+            La tecnología tiene sentido cuando te facilita el trabajo.
+          </h2>
+
+          <p
+            data-es="En MPT Consultoria aplicamos herramientas digitales e inteligencia artificial a tareas administrativas reales. Buscamos procesos más sencillos, información mejor organizada y menos trabajo manual innecesario."
+            data-ca="A MPT Consultoria apliquem eines digitals i intel·ligència artificial a tasques administratives reals. Busquem processos més senzills, informació més ben organitzada i menys feina manual innecessària.">
+            En MPT Consultoria aplicamos herramientas digitales e inteligencia artificial a tareas administrativas reales. Buscamos procesos más sencillos, información mejor organizada y menos trabajo manual innecesario.
+          </p>
+
+          <p
+            data-es="No proponemos proyectos abiertos ni sistemas innecesariamente complejos. Cada intervención parte de una solución concreta, con un alcance y unos entregables acordados antes de empezar."
+            data-ca="No proposem projectes oberts ni sistemes innecessàriament complexos. Cada intervenció parteix d'una solució concreta, amb un abast i uns lliurables acordats abans de començar.">
+            No proponemos proyectos abiertos ni sistemas innecesariamente complejos. Cada intervención parte de una solución concreta, con un alcance y unos entregables acordados antes de empezar.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUCIONES -->
+
+    <section class="solutions" id="soluciones">
+      <div class="container">
+
+        <div class="solutions-heading">
+          <span class="eyebrow"
+            data-es="SOLUCIONES"
+            data-ca="SOLUCIONS">SOLUCIONES</span>
+
+          <h2
+            data-es="Servicios concretos para necesidades reales."
+            data-ca="Serveis concrets per a necessitats reals.">
+            Servicios concretos para necesidades reales.
+          </h2>
+
+          <p
+            data-es="Trabajamos con intervenciones delimitadas. Antes de iniciar cada proyecto se concretan las tareas incluidas, las herramientas necesarias y el resultado que se entregará."
+            data-ca="Treballem amb intervencions delimitades. Abans d'iniciar cada projecte es concreten les tasques incloses, les eines necessàries i el resultat que es lliurarà.">
+            Trabajamos con intervenciones delimitadas. Antes de iniciar cada proyecto se concretan las tareas incluidas, las herramientas necesarias y el resultado que se entregará.
+          </p>
+        </div>
+
+        <div class="solution-grid">
+
+          <article class="solution-card">
+            <span class="solution-number">01 / DOCUMENTACIÓN</span>
+
+            <h3
+              data-es="Organización documental"
+              data-ca="Organització documental">
+              Organización documental
+            </h3>
+
+            <p
+              data-es="Una estructura digital clara para clasificar, guardar y localizar documentos sin perder tiempo buscando archivos."
+              data-ca="Una estructura digital clara per classificar, desar i localitzar documents sense perdre temps buscant arxius.">
+              Una estructura digital clara para clasificar, guardar y localizar documentos sin perder tiempo buscando archivos.
+            </p>
+
+            <div class="deliverable">
+              <strong data-es="Qué incluye" data-ca="Què inclou">Qué incluye</strong>
+              <span
+                data-es="Estructura de carpetas, criterios de clasificación y guía breve de uso."
+                data-ca="Estructura de carpetes, criteris de classificació i guia breu d'ús.">
+                Estructura de carpetas, criterios de clasificación y guía breve de uso.
+              </span>
+            </div>
+          </article>
+
+          <article class="solution-card">
+            <span class="solution-number">02 / AUTOMATIZACIÓN</span>
+
+            <h3
+              data-es="Automatización administrativa"
+              data-ca="Automatització administrativa">
+              Automatización administrativa
+            </h3>
+
+            <p
+              data-es="Simplificación de una tarea repetitiva mediante la conexión de herramientas digitales compatibles."
+              data-ca="Simplificació d'una tasca repetitiva mitjançant la connexió d'eines digitals compatibles.">
+              Simplificación de una tarea repetitiva mediante la conexión de herramientas digitales compatibles.
+            </p>
+
+            <div class="deliverable">
+              <strong data-es="Qué incluye" data-ca="Què inclou">Qué incluye</strong>
+              <span
+                data-es="Un flujo de trabajo delimitado, configuración, pruebas e instrucciones básicas."
+                data-ca="Un flux de treball delimitat, configuració, proves i instruccions bàsiques.">
+                Un flujo de trabajo delimitado, configuración, pruebas e instrucciones básicas.
+              </span>
+            </div>
+          </article>
+
+          <article class="solution-card">
+            <span class="solution-number">03 / INTELIGENCIA ARTIFICIAL</span>
+
+            <h3
+              data-es="Asistencia con IA para documentos"
+              data-ca="Assistència amb IA per a documents">
+              Asistencia con IA para documentos
+            </h3>
+
+            <p
+              data-es="Uso de herramientas de IA para preparar borradores, resumir información y estructurar contenidos administrativos."
+              data-ca="Ús d'eines d'IA per preparar esborranys, resumir informació i estructurar continguts administratius.">
+              Uso de herramientas de IA para preparar borradores, resumir información y estructurar contenidos administrativos.
+            </p>
+
+            <div class="deliverable">
+              <strong data-es="Qué incluye" data-ca="Què inclou">Qué incluye</strong>
+              <span
+                data-es="Plantillas de trabajo, instrucciones de uso y revisión de resultados."
+                data-ca="Plantilles de treball, instruccions d'ús i revisió de resultats.">
+                Plantillas de trabajo, instrucciones de uso y revisión de resultados.
+              </span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTODO -->
+
+    <section class="process" id="metodo">
+      <div class="container">
+
+        <div class="process-heading">
+          <span class="eyebrow"
+            data-es="CÓMO TRABAJAMOS"
+            data-ca="COM TREBALLEM">CÓMO TRABAJAMOS</span>
+
+          <h2
+            data-es="Un proceso claro, de principio a fin."
+            data-ca="Un procés clar, de principi a fi.">
+            Un proceso claro, de principio a fin.
+          </h2>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="process-item">
+            <span>01</span>
+            <h3 data-es="Definimos la solución" data-ca="Definim la solució">
+              Definimos la solución
+            </h3>
+            <p
+              data-es="Identificamos la tarea concreta y comprobamos que la solución propuesta sea viable."
+              data-ca="Identifiquem la tasca concreta i comprovem que la solució proposada sigui viable.">
+              Identificamos la tarea concreta y comprobamos que la solución propuesta sea viable.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <span>02</span>
+            <h3 data-es="Acordamos el alcance" data-ca="Acordem l'abast">
+              Acordamos el alcance
+            </h3>
+            <p
+              data-es="Concretamos qué se hará, qué herramientas se utilizarán, los plazos y el presupuesto."
+              data-ca="Concretem què es farà, quines eines s'utilitzaran, els terminis i el pressupost.">
+              Concretamos qué se hará, qué herramientas se utilizarán, los plazos y el presupuesto.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <span>03</span>
+            <h3 data-es="Implementamos y entregamos" data-ca="Implementem i lliurem">
+              Implementamos y entregamos
+            </h3>
+            <p
+              data-es="Realizamos el trabajo acordado, probamos el resultado y entregamos las instrucciones necesarias."
+              data-ca="Fem la feina acordada, provem el resultat i lliurem les instruccions necessàries.">
+              Realizamos el trabajo acordado, probamos el resultado y entregamos las instrucciones necesarias.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MENSAJE HUMANO -->
+
+    <section class="human-section">
+      <div class="human-image">
+        <img
+          src="https://images.unsplash.com/photo-1752650736024-d6aac18abc2d?auto=format&fit=crop&fm=jpg&q=85&w=1400"
+          alt="Dos profesionales colaborando en una tarea de trabajo"
+          loading="lazy">
+      </div>
+
+      <div class="human-copy">
+        <span class="eyebrow"
+          data-es="TECNOLOGÍA CON SENTIDO"
+          data-ca="TECNOLOGIA AMB SENTIT">TECNOLOGÍA CON SENTIDO</span>
+
+        <h2
+          data-es="La automatización debe adaptarse a tu negocio. No al revés."
+          data-ca="L'automatització s'ha d'adaptar al teu negoci. No a l'inrevés.">
+          La automatización debe adaptarse a tu negocio. No al revés.
+        </h2>
+
+        <p
+          data-es="Seleccionamos herramientas según cada necesidad y explicamos con claridad qué hacen, qué límites tienen y si generan costes externos."
+          data-ca="Seleccionem eines segons cada necessitat i expliquem amb claredat què fan, quins límits tenen i si generen costos externs.">
+          Seleccionamos herramientas según cada necesidad y explicamos con claridad qué hacen, qué límites tienen y si generan costes externos.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section class="contact" id="contacto">
+      <div class="container contact-inner">
+
+        <span class="eyebrow"
+          data-es="SIGUIENTE PASO"
+          data-ca="PAS SEGÜENT">SIGUIENTE PASO</span>
+
+        <h2
+          data-es="¿Hay una solución que encaja con tu negocio?"
+          data-ca="Hi ha una solució que encaixa amb el teu negoci?">
+          ¿Hay una solución que encaja con tu negocio?
+        </h2>
+
+        <p
+          data-es="Escríbenos indicando qué servicio te interesa. Revisaremos si encaja con las soluciones que ofrecemos y te explicaremos el alcance, los plazos y el presupuesto antes de empezar."
+          data-ca="Escriu-nos indicant quin servei t'interessa. Revisarem si encaixa amb les solucions que oferim i t'explicarem l'abast, els terminis i el pressupost abans de començar.">
+          Escríbenos indicando qué servicio te interesa. Revisaremos si encaja con las soluciones que ofrecemos y te explicaremos el alcance, los plazos y el presupuesto antes de empezar.
+        </p>
+
+        <a class="button" href="mailto:mptiabcn@gmail.com?subject=Informaci%C3%B3n%20sobre%20soluciones%20MPT"
+          data-es="Consultar una solución"
+          data-ca="Consultar una solució">
+          Consultar una solución
+        </a>
+
+        <a class="contact-email" href="mailto:mptiabcn@gmail.com">
+          mptiabcn@gmail.com
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 MPT Consultoria</span>
+      <span
+        data-es="IA · Automatización · Gestión administrativa"
+        data-ca="IA · Automatització · Gestió administrativa">
+        IA · Automatización · Gestión administrativa
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+        element.innerHTML = element.getAttribute('data-' + lang);
+      });
+
+      document.getElementById('lang-es').classList.toggle('active', lang === 'es');
+      document.getElementById('lang-ca').classList.toggle('active', lang === 'ca');
+    }
+  </script>
 
 </body>
 </html>
