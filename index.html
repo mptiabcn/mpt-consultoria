@@ -4,8 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="MPT Consultoria. Inteligencia artificial y automatización de procesos administrativos para autónomos y pequeñas empresas.">
+
   <title>MPT Consultoria | IA y Automatización</title>
+
   <style>
     :root {
       --navy: #142d46;
@@ -15,7 +18,13 @@
       --text: #34495e;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -26,27 +35,49 @@
     }
 
     header {
-      padding: 20px 8%;
+      padding: 10px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 25px;
       border-bottom: 1px solid #e8eef2;
+      background: white;
     }
 
-    .logo {
-      font-size: 27px;
-      font-weight: bold;
-      color: var(--navy);
-      letter-spacing: 2px;
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
     }
 
-    .logo span { color: var(--turquoise); }
+    .brand-logo {
+      display: block;
+      width: 185px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
     nav a {
       color: var(--navy);
       text-decoration: none;
       margin-left: 22px;
       font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--turquoise);
+    }
+
+    .language {
+      white-space: nowrap;
     }
 
     .language button {
@@ -55,6 +86,7 @@
       cursor: pointer;
       color: var(--blue);
       font-weight: bold;
+      font-size: 14px;
     }
 
     .hero {
@@ -85,9 +117,16 @@
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
+      transition: background 0.2s ease;
     }
 
-    section { padding: 75px 8%; }
+    .button:hover {
+      background: var(--navy);
+    }
+
+    section {
+      padding: 75px 8%;
+    }
 
     h2 {
       color: var(--navy);
@@ -119,7 +158,9 @@
       border: 1px solid #e5edf0;
     }
 
-    .service h3 { color: var(--blue); }
+    .service h3 {
+      color: var(--blue);
+    }
 
     .contact {
       text-align: center;
@@ -127,7 +168,9 @@
       color: white;
     }
 
-    .contact h2 { color: white; }
+    .contact h2 {
+      color: white;
+    }
 
     .contact p {
       max-width: 700px;
@@ -141,120 +184,219 @@
       color: #718096;
     }
 
-    @media (max-width: 650px) {
-      header { flex-wrap: wrap; gap: 12px; }
-      nav { width: 100%; }
-      nav a { margin: 0 12px 0 0; }
-      .hero { padding: 70px 7%; }
+    @media (max-width: 750px) {
+      header {
+        flex-direction: column;
+        padding: 15px 5%;
+        gap: 10px;
+      }
+
+      .brand-logo {
+        width: 165px;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 0 10px;
+      }
+
+      .language {
+        margin-top: 5px;
+      }
+
+      .hero {
+        padding: 70px 7%;
+      }
+
+      section {
+        padding: 60px 7%;
+      }
     }
   </style>
 </head>
 
 <body>
-<header>
-  <div class="logo">MPT<span>.</span></div>
+
+<header id="top">
+
+  <a class="brand" href="#top" aria-label="MPT Consultoria - Inicio">
+    <img
+      class="brand-logo"
+      src="LOGO_IAconsulting.jpg"
+      alt="MPT Consultoria - IA, automatización y consultoría">
+  </a>
+
   <nav>
     <a href="#about" data-es="Nosotros" data-ca="Nosaltres">Nosotros</a>
     <a href="#services" data-es="Servicios" data-ca="Serveis">Servicios</a>
     <a href="#contact" data-es="Contacto" data-ca="Contacte">Contacto</a>
   </nav>
+
   <div class="language">
     <button onclick="setLanguage('es')">ES</button> |
     <button onclick="setLanguage('ca')">CA</button>
   </div>
+
 </header>
 
 <main>
+
   <div class="hero">
-    <h1 data-es="Simplificamos la gestión. Impulsamos tu negocio."
-        data-ca="Simplifiquem la gestió. Impulsem el teu negoci.">
+
+    <h1
+      data-es="Simplificamos la gestión. Impulsamos tu negocio."
+      data-ca="Simplifiquem la gestió. Impulsem el teu negoci.">
       Simplificamos la gestión. Impulsamos tu negocio.
     </h1>
-    <p data-es="Soluciones de inteligencia artificial y automatización para reducir tareas administrativas repetitivas y ayudarte a trabajar de forma más eficiente."
-       data-ca="Solucions d'intel·ligència artificial i automatització per reduir tasques administratives repetitives i ajudar-te a treballar de manera més eficient.">
+
+    <p
+      data-es="Soluciones de inteligencia artificial y automatización para reducir tareas administrativas repetitivas y ayudarte a trabajar de forma más eficiente."
+      data-ca="Solucions d'intel·ligència artificial i automatització per reduir tasques administratives repetitives i ajudar-te a treballar de manera més eficient.">
       Soluciones de inteligencia artificial y automatización para reducir tareas administrativas repetitivas y ayudarte a trabajar de forma más eficiente.
     </p>
-    <a class="button" href="#contact"
-       data-es="Solicitar diagnóstico inicial"
-       data-ca="Sol·licitar diagnòstic inicial">
+
+    <a
+      class="button"
+      href="#contact"
+      data-es="Solicitar diagnóstico inicial"
+      data-ca="Sol·licitar diagnòstic inicial">
       Solicitar diagnóstico inicial
     </a>
+
   </div>
 
   <section id="about">
+
     <div class="intro">
-      <h2 data-es="Tecnología útil, aplicada a tu día a día"
-          data-ca="Tecnologia útil, aplicada al teu dia a dia">
+
+      <h2
+        data-es="Tecnología útil, aplicada a tu día a día"
+        data-ca="Tecnologia útil, aplicada al teu dia a dia">
         Tecnología útil, aplicada a tu día a día
       </h2>
-      <p data-es="En MPT Consultoria ayudamos a autónomos y pequeñas empresas a identificar oportunidades de mejora en sus procesos administrativos mediante herramientas digitales, inteligencia artificial y automatizaciones prácticas."
-         data-ca="A MPT Consultoria ajudem autònoms i petites empreses a identificar oportunitats de millora en els seus processos administratius mitjançant eines digitals, intel·ligència artificial i automatitzacions pràctiques.">
+
+      <p
+        data-es="En MPT Consultoria ayudamos a autónomos y pequeñas empresas a identificar oportunidades de mejora en sus procesos administrativos mediante herramientas digitales, inteligencia artificial y automatizaciones prácticas."
+        data-ca="A MPT Consultoria ajudem autònoms i petites empreses a identificar oportunitats de millora en els seus processos administratius mitjançant eines digitals, intel·ligència artificial i automatitzacions pràctiques.">
         En MPT Consultoria ayudamos a autónomos y pequeñas empresas a identificar oportunidades de mejora en sus procesos administrativos mediante herramientas digitales, inteligencia artificial y automatizaciones prácticas.
       </p>
+
     </div>
+
   </section>
 
   <section class="services" id="services">
-    <h2 data-es="Qué podemos hacer por tu negocio"
-        data-ca="Què podem fer pel teu negoci">
+
+    <h2
+      data-es="Qué podemos hacer por tu negocio"
+      data-ca="Què podem fer pel teu negoci">
       Qué podemos hacer por tu negocio
     </h2>
+
     <div class="grid">
+
       <div class="service">
-        <h3 data-es="Gestión documental" data-ca="Gestió documental">Gestión documental</h3>
-        <p data-es="Organización, clasificación y extracción de información de documentos."
-           data-ca="Organització, classificació i extracció d'informació de documents.">
+
+        <h3
+          data-es="Gestión documental"
+          data-ca="Gestió documental">
+          Gestión documental
+        </h3>
+
+        <p
+          data-es="Organización, clasificación y extracción de información de documentos."
+          data-ca="Organització, classificació i extracció d'informació de documents.">
           Organización, clasificación y extracción de información de documentos.
         </p>
+
       </div>
+
       <div class="service">
-        <h3 data-es="Automatización administrativa" data-ca="Automatització administrativa">Automatización administrativa</h3>
-        <p data-es="Conexión de herramientas y reducción de tareas manuales repetitivas."
-           data-ca="Connexió d'eines i reducció de tasques manuals repetitives.">
+
+        <h3
+          data-es="Automatización administrativa"
+          data-ca="Automatització administrativa">
+          Automatización administrativa
+        </h3>
+
+        <p
+          data-es="Conexión de herramientas y reducción de tareas manuales repetitivas."
+          data-ca="Connexió d'eines i reducció de tasques manuals repetitives.">
           Conexión de herramientas y reducción de tareas manuales repetitivas.
         </p>
+
       </div>
+
       <div class="service">
-        <h3 data-es="Inteligencia artificial aplicada" data-ca="Intel·ligència artificial aplicada">Inteligencia artificial aplicada</h3>
-        <p data-es="Aplicaciones prácticas de IA para analizar, organizar y transformar información."
-           data-ca="Aplicacions pràctiques d'IA per analitzar, organitzar i transformar informació.">
+
+        <h3
+          data-es="Inteligencia artificial aplicada"
+          data-ca="Intel·ligència artificial aplicada">
+          Inteligencia artificial aplicada
+        </h3>
+
+        <p
+          data-es="Aplicaciones prácticas de IA para analizar, organizar y transformar información."
+          data-ca="Aplicacions pràctiques d'IA per analitzar, organitzar i transformar informació.">
           Aplicaciones prácticas de IA para analizar, organizar y transformar información.
         </p>
+
       </div>
+
     </div>
+
   </section>
 
   <section id="contact" class="contact">
-    <h2 data-es="Hablemos de tu negocio" data-ca="Parlem del teu negoci">
+
+    <h2
+      data-es="Hablemos de tu negocio"
+      data-ca="Parlem del teu negoci">
       Hablemos de tu negocio
     </h2>
-    <p data-es="Cuéntanos qué tareas administrativas te ocupan más tiempo. Podemos realizar un diagnóstico inicial gratuito para identificar posibles oportunidades de automatización."
-       data-ca="Explica'ns quines tasques administratives t'ocupen més temps. Podem fer un diagnòstic inicial gratuït per identificar possibles oportunitats d'automatització.">
+
+    <p
+      data-es="Cuéntanos qué tareas administrativas te ocupan más tiempo. Podemos realizar un diagnóstico inicial gratuito para identificar posibles oportunidades de automatización."
+      data-ca="Explica'ns quines tasques administratives t'ocupen més temps. Podem fer un diagnòstic inicial gratuït per identificar possibles oportunitats d'automatització.">
       Cuéntanos qué tareas administrativas te ocupan más tiempo. Podemos realizar un diagnóstico inicial gratuito para identificar posibles oportunidades de automatización.
     </p>
-    <a class="button" href="mailto:mptiabcn@gmail.com"
-       data-es="Contactar por correo"
-       data-ca="Contactar per correu">
+
+    <a
+      class="button"
+      href="mailto:mptiabcn@gmail.com"
+      data-es="Contactar por correo"
+      data-ca="Contactar per correu">
       Contactar por correo
     </a>
+
   </section>
+
 </main>
 
 <footer>
+
   © 2026 MPT Consultoria ·
-  <span data-es="Inteligencia artificial y automatización"
-        data-ca="Intel·ligència artificial i automatització">
+
+  <span
+    data-es="Inteligencia artificial y automatización"
+    data-ca="Intel·ligència artificial i automatització">
     Inteligencia artificial y automatización
   </span>
+
 </footer>
 
 <script>
   function setLanguage(lang) {
     document.documentElement.lang = lang;
+
     document.querySelectorAll('[data-' + lang + ']').forEach(el => {
       el.textContent = el.getAttribute('data-' + lang);
     });
   }
 </script>
+
 </body>
 </html>
