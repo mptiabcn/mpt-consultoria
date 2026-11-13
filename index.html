@@ -4,11 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MPT Consultoria. Soluciones concretas de automatización y gestión administrativa para autónomos y pequeñas empresas.">
+  <meta name="description" content="MPT Consultoria. Páginas web, asistentes conversacionales, gestión de solicitudes y automatización para pequeños negocios.">
   <meta name="theme-color" content="#ffffff">
-  <title>MPT Consultoria | Automatización y gestión administrativa</title>
+  <title>MPT Consultoria | Soluciones digitales para pequeños negocios</title>
 
-  <!-- TIPOGRAFÍAS: MANROPE + INTER -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,15 +24,8 @@
       --max: 1200px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -41,644 +33,274 @@
       background: var(--white);
       line-height: 1.7;
     }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), 88%); margin: 0 auto; }
 
-    a {
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(var(--max), 88%);
-      margin: 0 auto;
-    }
-
-    /* CABECERA FIJA */
-
+    /* CABECERA */
     .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(12px);
+      position: sticky; top: 0; z-index: 1000; width: 100%;
+      background: rgba(255,255,255,.97); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
-
     .header-inner {
-      min-height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
+      min-height: 88px; display: flex; align-items: center;
+      justify-content: space-between; gap: 28px;
     }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    .brand-logo {
-      width: 190px;
-      height: auto;
-    }
-
-    .main-nav {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
+    .brand { display: inline-flex; align-items: center; flex-shrink: 0; }
+    .brand-logo { width: 190px; height: auto; }
+    .main-nav { display: flex; align-items: center; gap: 30px; }
     .main-nav a {
-      text-decoration: none;
-      color: #454b49;
-      font-size: 13px;
-      font-weight: 600;
-      transition: color .2s ease;
+      text-decoration: none; color: #454b49; font-size: 13px;
+      font-weight: 600; transition: color .2s ease;
     }
-
-    .main-nav a:hover {
-      color: var(--green);
-    }
-
+    .main-nav a:hover { color: var(--green); }
     .language {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      white-space: nowrap;
-      font-size: 13px;
+      display: flex; align-items: center; gap: 7px;
+      white-space: nowrap; font-size: 13px;
     }
-
     .language button {
-      border: 0;
-      background: transparent;
-      color: #777;
-      cursor: pointer;
-      padding: 6px 3px;
-      font-weight: 600;
-      font-family: 'Inter', sans-serif;
+      border: 0; background: transparent; color: #777; cursor: pointer;
+      padding: 6px 3px; font-weight: 600; font-family: 'Inter', sans-serif;
     }
-
     .language button.active {
-      color: var(--green-dark);
-      text-decoration: underline;
+      color: var(--green-dark); text-decoration: underline;
       text-underline-offset: 5px;
     }
 
     /* ELEMENTOS GENERALES */
-
     .eyebrow {
-      display: inline-block;
-      color: var(--green);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      display: inline-block; color: var(--green); font-size: 11px;
+      font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
       margin-bottom: 18px;
     }
-
-    h1, h2, h3, p {
-      margin-top: 0;
-    }
-
+    h1, h2, h3, p { margin-top: 0; }
     h1, h2, h3 {
-      font-family: 'Manrope', sans-serif;
-      line-height: 1.2;
-      letter-spacing: -0.7px;
+      font-family: 'Manrope', sans-serif; line-height: 1.2;
+      letter-spacing: -.7px;
     }
-
-    h1 {
-      font-size: clamp(38px, 5vw, 64px);
-      font-weight: 700;
-    }
-
-    h2 {
-      font-size: clamp(30px, 3.5vw, 43px);
-      font-weight: 700;
-    }
-
-    .section-intro {
-      max-width: 690px;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
+    h1 { font-size: clamp(38px, 5vw, 64px); font-weight: 700; }
+    h2 { font-size: clamp(30px, 3.5vw, 43px); font-weight: 700; }
     .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 24px;
-      background: var(--green-dark);
-      color: white;
-      border: 1px solid var(--green-dark);
-      border-radius: 3px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 24px; background: var(--green-dark); color: white;
+      border: 1px solid var(--green-dark); border-radius: 3px;
+      text-decoration: none; font-size: 13px; font-weight: 700;
       font-family: 'Inter', sans-serif;
       transition: background .2s ease, transform .2s ease;
     }
-
-    .button:hover {
-      background: #111515;
-      transform: translateY(-2px);
-    }
-
-    .button-outline {
-      background: transparent;
-      color: var(--green-dark);
-    }
-
-    .button-outline:hover {
-      color: white;
-    }
+    .button:hover { background: #111515; transform: translateY(-2px); }
+    .button-outline { background: transparent; color: var(--green-dark); }
+    .button-outline:hover { color: white; }
 
     /* PORTADA */
-
-    .hero {
-      padding: 76px 0 82px;
-      overflow: hidden;
-    }
-
+    .hero { padding: 76px 0 82px; overflow: hidden; }
     .hero-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      align-items: center;
-      gap: 65px;
+      display: grid; grid-template-columns: .95fr 1.05fr;
+      align-items: center; gap: 65px;
     }
-
-    .hero-copy {
-      max-width: 570px;
-    }
-
-    .hero h1 {
-      margin-bottom: 24px;
-    }
-
-    .hero h1 span {
-      color: var(--green);
-    }
-
+    .hero-copy { max-width: 570px; }
+    .hero h1 { margin-bottom: 24px; }
+    .hero h1 span { color: var(--green); }
     .hero-copy p {
-      color: var(--muted);
-      font-size: 17px;
-      max-width: 520px;
+      color: var(--muted); font-size: 17px; max-width: 520px;
       margin-bottom: 30px;
     }
-
-    .hero-image {
-      position: relative;
-      min-height: 470px;
-    }
-
+    .hero-image { position: relative; min-height: 470px; }
     .hero-image img {
-      width: 100%;
-      height: 470px;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 3px;
+      width: 100%; height: 470px; object-fit: cover;
+      object-position: center; border-radius: 3px;
     }
-
     .hero-image::after {
-      content: "";
-      position: absolute;
-      right: -18px;
-      bottom: -18px;
-      width: 42%;
-      height: 42%;
-      border: 1px solid #dedede;
-      z-index: -1;
+      content: ""; position: absolute; right: -18px; bottom: -18px;
+      width: 42%; height: 42%; border: 1px solid #dedede; z-index: -1;
     }
 
-    /* FRANJA DE VALOR */
-
-    .value-strip {
-      background: var(--cream);
-      padding: 24px 0;
-    }
-
+    /* FRANJA */
+    .value-strip { background: var(--cream); padding: 24px 0; }
     .value-strip-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
+      display: flex; justify-content: space-between; align-items: center; gap: 25px;
     }
-
-    .value-strip p {
-      margin: 0;
-      font-size: 14px;
-      color: #555d59;
-    }
+    .value-strip p { margin: 0; font-size: 14px; color: #555d59; }
 
     /* PRESENTACIÓN */
-
-    .about {
-      position: relative;
-      overflow: hidden;
-      padding: 110px 0;
-      isolation: isolate;
-    }
-
+    .about { position: relative; overflow: hidden; padding: 110px 0; isolation: isolate; }
     .about::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      right: 2%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: min(390px, 38vw);
-      height: min(390px, 38vw);
+      content: ""; position: absolute; z-index: -1; right: 2%; top: 50%;
+      transform: translateY(-50%); width: min(390px, 38vw); height: min(390px, 38vw);
       background-image: url("Logotipo%20circular%20MPT%20de%20IA%20y%20automatizaci%C3%B3n.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      opacity: 0.035;
-      pointer-events: none;
+      background-repeat: no-repeat; background-position: center;
+      background-size: contain; opacity: .035; pointer-events: none;
     }
-
-    .about-content {
-      max-width: 760px;
-    }
-
-    .about-content h2 {
-      max-width: 650px;
-      margin-bottom: 25px;
-    }
-
-    .about-content p {
-      color: var(--muted);
-      font-size: 17px;
-    }
+    .about-content { max-width: 760px; }
+    .about-content h2 { max-width: 650px; margin-bottom: 25px; }
+    .about-content p { color: var(--muted); font-size: 17px; }
 
     /* SOLUCIONES */
-
-    .solutions {
-      background: var(--cream);
-      padding: 100px 0;
-    }
-
-    .solutions-heading {
-      max-width: 720px;
-      margin-bottom: 48px;
-    }
-
-    .solutions-heading p {
-      color: var(--muted);
-      font-size: 16px;
-    }
-
+    .solutions { background: var(--cream); padding: 100px 0; }
+    .solutions-heading { max-width: 720px; margin-bottom: 48px; }
+    .solutions-heading p { color: var(--muted); font-size: 16px; }
     .solution-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
     }
-
     .solution-card {
-      background: white;
-      padding: 32px 28px;
-      border: 1px solid #e8e8e8;
-      display: flex;
-      flex-direction: column;
-      min-height: 340px;
+      background: white; padding: 32px 25px; border: 1px solid #e8e8e8;
+      display: flex; flex-direction: column; min-height: 360px;
     }
-
     .solution-number {
-      color: #a4a4a4;
-      font-size: 12px;
-      letter-spacing: 1px;
-      margin-bottom: 26px;
+      color: #a4a4a4; font-size: 12px; letter-spacing: 1px; margin-bottom: 26px;
     }
-
-    .solution-card h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-
-    .solution-card p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 22px;
-    }
-
+    .solution-card h3 { font-size: 21px; margin-bottom: 15px; }
+    .solution-card p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
     .deliverable {
-      margin-top: auto;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      color: #59605e;
-      font-size: 13px;
+      margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line);
+      color: #59605e; font-size: 13px;
     }
-
     .deliverable strong {
-      display: block;
-      color: var(--green-dark);
-      margin-bottom: 5px;
+      display: block; color: var(--green-dark); margin-bottom: 5px;
     }
 
-    /* FORMA DE TRABAJAR */
-
-    .process {
-      padding: 105px 0;
-    }
-
-    .process-heading {
-      max-width: 700px;
-      margin-bottom: 45px;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 35px;
-    }
-
-    .process-item {
-      border-top: 1px solid #d0d0d0;
-      padding-top: 22px;
-    }
-
+    /* MÉTODO */
+    .process { padding: 105px 0; }
+    .process-heading { max-width: 700px; margin-bottom: 45px; }
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
+    .process-item { border-top: 1px solid #d0d0d0; padding-top: 22px; }
     .process-item span {
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
+      color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: 1px;
     }
+    .process-item h3 { font-size: 19px; margin: 12px 0; }
+    .process-item p { color: var(--muted); font-size: 14px; }
 
-    .process-item h3 {
-      font-size: 19px;
-      margin: 12px 0;
-    }
-
-    .process-item p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* IMAGEN Y MENSAJE */
-
+    /* MENSAJE */
     .human-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 410px;
-      background: var(--cream);
+      display: grid; grid-template-columns: 1fr 1fr;
+      min-height: 410px; background: var(--cream);
     }
-
     .human-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 410px;
-      object-fit: cover;
+      width: 100%; height: 100%; min-height: 410px; object-fit: cover;
     }
-
     .human-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 65px 12%;
+      display: flex; flex-direction: column; justify-content: center; padding: 65px 12%;
     }
-
-    .human-copy h2 {
-      font-size: clamp(28px, 3vw, 38px);
-    }
-
-    .human-copy p {
-      color: var(--muted);
-      font-size: 16px;
-    }
+    .human-copy h2 { font-size: clamp(28px, 3vw, 38px); }
+    .human-copy p { color: var(--muted); font-size: 16px; }
 
     /* CONTACTO */
-
-    .contact {
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-      padding: 100px 0;
-      text-align: center;
-    }
-
+    .contact { position: relative; overflow: hidden; isolation: isolate; padding: 100px 0; text-align: center; }
     .contact::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 370px;
-      height: 370px;
+      content: ""; position: absolute; z-index: -1; left: 50%; top: 50%;
+      transform: translate(-50%, -50%); width: 370px; height: 370px;
       background-image: url("Logotipo%20circular%20MPT%20de%20IA%20y%20automatizaci%C3%B3n.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      opacity: 0.035;
-      pointer-events: none;
+      background-repeat: no-repeat; background-position: center;
+      background-size: contain; opacity: .035; pointer-events: none;
     }
-
-    .contact-inner {
-      max-width: 720px;
-      margin: 0 auto;
+    .contact-inner { max-width: 720px; margin: 0 auto; }
+    .contact p { color: var(--muted); font-size: 16px; margin-bottom: 28px; }
+    .contact-actions {
+      display: flex; justify-content: center; align-items: center;
+      flex-wrap: wrap; gap: 12px;
     }
-
-    .contact p {
-      color: var(--muted);
-      font-size: 16px;
-      margin-bottom: 28px;
-    }
-
     .contact-email {
-      display: block;
-      margin-top: 20px;
-      color: var(--green-dark);
-      font-size: 14px;
-      text-decoration: none;
+      display: block; margin-top: 20px; color: var(--green-dark);
+      font-size: 14px; text-decoration: none;
+    }
+    .contact-phone {
+      display: block; margin-top: 8px; color: var(--green-dark);
+      font-size: 14px; text-decoration: none;
     }
 
     /* PIE */
+    footer { border-top: 1px solid var(--line); padding: 28px 0; color: #858a86; font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    footer a { text-decoration: none; }
 
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 0;
-      color: #858a86;
-      font-size: 12px;
+    /* ASISTENTE CONVERSACIONAL MPT */
+    .mpt-chat-launcher {
+      position: fixed; right: 24px; bottom: 24px; z-index: 1500;
+      width: 62px; height: 62px; border: 0; border-radius: 50%;
+      background: var(--green-dark); color: #fff; cursor: pointer;
+      box-shadow: 0 8px 28px rgba(0,0,0,.18); display: grid; place-items: center;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .mpt-chat-launcher:hover { transform: translateY(-3px); background: #111515; }
+    .mpt-chat-launcher svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .mpt-chat-panel {
+      position: fixed; right: 24px; bottom: 98px; z-index: 1500;
+      width: min(390px, calc(100vw - 32px)); height: min(570px, calc(100dvh - 130px));
+      background: #fff; border: 1px solid #e5e7e7; border-radius: 14px;
+      box-shadow: 0 16px 55px rgba(0,0,0,.18); display: none; overflow: hidden;
+      flex-direction: column;
+    }
+    .mpt-chat-panel.open { display: flex; }
+    .mpt-chat-head { padding: 17px 18px; background: var(--green-dark); color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .mpt-chat-head strong { display: block; font: 700 15px 'Manrope', sans-serif; }
+    .mpt-chat-head small { display: block; color: #d9dfdd; font-size: 11px; margin-top: 3px; }
+    .mpt-chat-close { border: 0; color: #fff; background: transparent; cursor: pointer; font-size: 25px; line-height: 1; padding: 4px 7px; }
+    .mpt-chat-messages { flex: 1; overflow-y: auto; padding: 16px; background: #fafafa; display: flex; flex-direction: column; gap: 11px; }
+    .mpt-chat-message { max-width: 88%; padding: 11px 13px; border-radius: 12px; font-size: 13px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .mpt-chat-message.bot { align-self: flex-start; color: #343a39; background: #fff; border: 1px solid #e8eaea; border-top-left-radius: 4px; }
+    .mpt-chat-message.user { align-self: flex-end; color: #fff; background: #414948; border-top-right-radius: 4px; }
+    .mpt-chat-quick { padding: 10px 13px 2px; display: flex; flex-wrap: wrap; gap: 7px; background: #fff; }
+    .mpt-chat-quick button { border: 1px solid #d9dfdd; border-radius: 20px; padding: 7px 10px; color: #39413f; background: #fff; font: 500 11px 'Inter', sans-serif; cursor: pointer; }
+    .mpt-chat-quick button:hover { background: #f3f5f4; }
+    .mpt-chat-form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid #eceeee; background: #fff; }
+    .mpt-chat-form input { min-width: 0; flex: 1; border: 1px solid #dfe3e2; border-radius: 7px; padding: 11px 12px; font: 13px 'Inter', sans-serif; color: var(--ink); }
+    .mpt-chat-form button { border: 0; border-radius: 7px; background: var(--green-dark); color: #fff; padding: 0 15px; font: 600 12px 'Inter', sans-serif; cursor: pointer; }
+    .mpt-chat-note { padding: 0 13px 10px; margin: 0; color: #858b89; background: #fff; font-size: 10px; line-height: 1.4; }
+    @media (max-width: 480px) {
+      .mpt-chat-launcher { right: 16px; bottom: 16px; width: 56px; height: 56px; }
+      .mpt-chat-panel { right: 10px; bottom: 82px; width: calc(100vw - 20px); height: min(570px, calc(100dvh - 105px)); }
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
+    /* MÓVILES */
+    @media (max-width: 1050px) {
+      .solution-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
-    footer a {
-      text-decoration: none;
-    }
-
-    /* ADAPTACIÓN A MÓVILES */
-
     @media (max-width: 850px) {
-      .header-inner {
-        min-height: 76px;
-        gap: 14px;
-      }
-
-      .brand-logo {
-        width: 155px;
-      }
-
-      .main-nav {
-        gap: 15px;
-      }
-
-      .main-nav a {
-        font-size: 12px;
-      }
-
-      .hero-grid {
-        gap: 35px;
-      }
-
-      .hero-image,
-      .hero-image img {
-        min-height: 390px;
-        height: 390px;
-      }
-
-      .solution-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .header-inner { min-height: 76px; gap: 14px; }
+      .brand-logo { width: 155px; }
+      .main-nav { gap: 15px; }
+      .main-nav a { font-size: 12px; }
+      .hero-grid { gap: 35px; }
+      .hero-image, .hero-image img { min-height: 390px; height: 390px; }
     }
-
     @media (max-width: 620px) {
-      html {
-        scroll-padding-top: 130px;
-      }
-
-      .container {
-        width: 90%;
-      }
-
+      html { scroll-padding-top: 130px; }
+      .container { width: 90%; }
       .header-inner {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 10px 0 12px;
-        gap: 8px;
+        flex-wrap: wrap; justify-content: center; padding: 10px 0 12px; gap: 8px;
       }
-
-      .brand {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .brand-logo {
-        width: 145px;
-      }
-
-      .main-nav {
-        width: 100%;
-        justify-content: center;
-        gap: 17px;
-      }
-
-      .main-nav a {
-        font-size: 11px;
-      }
-
-      .language {
-        position: absolute;
-        right: 5%;
-        top: 17px;
-      }
-
-      .hero {
-        padding: 55px 0 60px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .hero-image,
-      .hero-image img {
-        min-height: 300px;
-        height: 300px;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .value-strip-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-
-      .about,
-      .solutions,
-      .process,
-      .contact {
-        padding: 70px 0;
-      }
-
-      .about::before {
-        width: 250px;
-        height: 250px;
-        right: -65px;
-      }
-
-      .solution-grid,
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .solution-card {
-        min-height: auto;
-      }
-
-      .human-section {
-        grid-template-columns: 1fr;
-      }
-
-      .human-image img {
-        min-height: 280px;
-        height: 280px;
-      }
-
-      .human-copy {
-        padding: 48px 7%;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
+      .brand { width: 100%; justify-content: center; }
+      .brand-logo { width: 145px; }
+      .main-nav { width: 100%; justify-content: center; gap: 17px; }
+      .main-nav a { font-size: 11px; }
+      .language { position: absolute; right: 5%; top: 17px; }
+      .hero { padding: 55px 0 60px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 35px; }
+      .hero-image, .hero-image img { min-height: 300px; height: 300px; }
+      .hero h1 { font-size: 40px; }
+      .value-strip-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .about, .solutions, .process, .contact { padding: 70px 0; }
+      .about::before { width: 250px; height: 250px; right: -65px; }
+      .solution-grid, .process-grid { grid-template-columns: 1fr; }
+      .solution-card { min-height: auto; }
+      .human-section { grid-template-columns: 1fr; }
+      .human-image img { min-height: 280px; height: 280px; }
+      .human-copy { padding: 48px 7%; }
+      .footer-inner { flex-direction: column; text-align: center; }
     }
-
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      * {
-        transition: none !important;
-      }
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
     }
   </style>
 </head>
 
 <body>
-
   <header class="site-header">
     <div class="container header-inner">
-
       <a class="brand" href="#inicio" aria-label="MPT Consultoria - Inicio">
-        <img
-          class="brand-logo"
-          src="LOGO_IAconsulting.jpg"
-          alt="MPT Consultoria">
+        <img class="brand-logo" src="LOGO_IAconsulting.jpg" alt="MPT Consultoria">
       </a>
 
       <nav class="main-nav" aria-label="Navegación principal">
@@ -693,336 +315,283 @@
         <span>|</span>
         <button type="button" id="lang-ca" onclick="setLanguage('ca')">CA</button>
       </div>
-
     </div>
   </header>
 
   <main>
-
-    <!-- PORTADA -->
-
     <section class="hero" id="inicio">
       <div class="container hero-grid">
-
         <div class="hero-copy">
-          <span class="eyebrow"
-            data-es="MPT CONSULTORIA"
-            data-ca="MPT CONSULTORIA">MPT CONSULTORIA</span>
-
-          <h1
-            data-es="Menos tareas administrativas. <span>Más tiempo para tu negocio.</span>"
-            data-ca="Menys tasques administratives. <span>Més temps per al teu negoci.</span>">
-            Menos tareas administrativas. <span>Más tiempo para tu negocio.</span>
+          <span class="eyebrow" data-es="MPT CONSULTORIA" data-ca="MPT CONSULTORIA">MPT CONSULTORIA</span>
+          <h1 data-es="Soluciones digitales. <span>Más tiempo para tu negocio.</span>"
+              data-ca="Solucions digitals. <span>Més temps per al teu negoci.</span>">
+            Soluciones digitales. <span>Más tiempo para tu negocio.</span>
           </h1>
-
-          <p
-            data-es="Diseñamos soluciones concretas de organización y automatización para que autónomos y pequeñas empresas puedan dedicar menos tiempo a tareas repetitivas."
-            data-ca="Dissenyem solucions concretes d'organització i automatització perquè autònoms i petites empreses puguin dedicar menys temps a tasques repetitives.">
-            Diseñamos soluciones concretas de organización y automatización para que autónomos y pequeñas empresas puedan dedicar menos tiempo a tareas repetitivas.
+          <p data-es="Ayudamos a autónomos y pequeños negocios a mejorar su presencia digital, atender consultas y simplificar tareas del día a día con soluciones prácticas y adaptadas a cada actividad."
+             data-ca="Ajudem autònoms i petits negocis a millorar la seva presència digital, atendre consultes i simplificar tasques del dia a dia amb solucions pràctiques i adaptades a cada activitat.">
+            Ayudamos a autónomos y pequeños negocios a mejorar su presencia digital, atender consultas y simplificar tareas del día a día con soluciones prácticas y adaptadas a cada actividad.
           </p>
-
-          <a class="button" href="#soluciones"
-            data-es="Descubre nuestras soluciones"
-            data-ca="Descobreix les nostres solucions">
-            Descubre nuestras soluciones
-          </a>
+          <a class="button" href="#soluciones" data-es="Descubre nuestras soluciones" data-ca="Descobreix les nostres solucions">Descubre nuestras soluciones</a>
         </div>
 
         <div class="hero-image">
-          <img
-            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85"
-            alt="Espacio de trabajo moderno y luminoso"
-            fetchpriority="high">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85"
+               alt="Espacio de trabajo moderno y luminoso" fetchpriority="high">
         </div>
-
       </div>
     </section>
 
     <div class="value-strip">
       <div class="container value-strip-inner">
-        <p data-es="Soluciones prácticas, no tecnología por tecnología."
-           data-ca="Solucions pràctiques, no tecnologia per la tecnologia.">
-          Soluciones prácticas, no tecnología por tecnología.
-        </p>
-        <p data-es="Alcance definido · Entregables claros · Revisión humana"
-           data-ca="Abast definit · Lliurables clars · Revisió humana">
-          Alcance definido · Entregables claros · Revisión humana
-        </p>
+        <p data-es="Soluciones prácticas para pequeños negocios." data-ca="Solucions pràctiques per a petits negocis.">Soluciones prácticas para pequeños negocios.</p>
+        <p data-es="Pruebas previas · Alcance definido · Decisiones transparentes"
+           data-ca="Proves prèvies · Abast definit · Decisions transparents">Pruebas previas · Alcance definido · Decisiones transparentes</p>
       </div>
     </div>
-
-    <!-- NOSOTROS -->
 
     <section class="about" id="nosotros">
       <div class="container">
         <div class="about-content">
-
-          <span class="eyebrow"
-            data-es="QUÉ HACEMOS"
-            data-ca="QUÈ FEM">QUÉ HACEMOS</span>
-
-          <h2
-            data-es="La tecnología tiene sentido cuando te facilita el trabajo."
-            data-ca="La tecnologia té sentit quan et facilita la feina.">
-            La tecnología tiene sentido cuando te facilita el trabajo.
+          <span class="eyebrow" data-es="QUÉ HACEMOS" data-ca="QUÈ FEM">QUÉ HACEMOS</span>
+          <h2 data-es="La tecnología tiene sentido cuando resuelve una necesidad real."
+              data-ca="La tecnologia té sentit quan resol una necessitat real.">
+            La tecnología tiene sentido cuando resuelve una necesidad real.
           </h2>
-
-          <p
-            data-es="En MPT Consultoria aplicamos herramientas digitales e inteligencia artificial a tareas administrativas reales. Buscamos procesos más sencillos, información mejor organizada y menos trabajo manual innecesario."
-            data-ca="A MPT Consultoria apliquem eines digitals i intel·ligència artificial a tasques administratives reals. Busquem processos més senzills, informació més ben organitzada i menys feina manual innecessària.">
-            En MPT Consultoria aplicamos herramientas digitales e inteligencia artificial a tareas administrativas reales. Buscamos procesos más sencillos, información mejor organizada y menos trabajo manual innecesario.
+          <p data-es="En MPT Consultoria desarrollamos soluciones digitales para autónomos y pequeños negocios que quieren mejorar cómo se presentan en internet, cómo atienden a sus clientes y cómo gestionan determinadas tareas."
+             data-ca="A MPT Consultoria desenvolupem solucions digitals per a autònoms i petits negocis que volen millorar com es presenten a internet, com atenen els seus clients i com gestionen determinades tasques.">
+            En MPT Consultoria desarrollamos soluciones digitales para autónomos y pequeños negocios que quieren mejorar cómo se presentan en internet, cómo atienden a sus clientes y cómo gestionan determinadas tareas.
           </p>
-
-          <p
-            data-es="No proponemos proyectos abiertos ni sistemas innecesariamente complejos. Cada intervención parte de una solución concreta, con un alcance y unos entregables acordados antes de empezar."
-            data-ca="No proposem projectes oberts ni sistemes innecessàriament complexos. Cada intervenció parteix d'una solució concreta, amb un abast i uns lliurables acordats abans de començar.">
-            No proponemos proyectos abiertos ni sistemas innecesariamente complejos. Cada intervención parte de una solución concreta, con un alcance y unos entregables acordados antes de empezar.
+          <p data-es="Estudiamos cada necesidad antes de proponer herramientas. El objetivo no es añadir tecnología porque sí, sino encontrar una solución útil, asumible y proporcionada al negocio."
+             data-ca="Estudiem cada necessitat abans de proposar eines. L'objectiu no és afegir tecnologia perquè sí, sinó trobar una solució útil, assumible i proporcionada al negoci.">
+            Estudiamos cada necesidad antes de proponer herramientas. El objetivo no es añadir tecnología porque sí, sino encontrar una solución útil, asumible y proporcionada al negocio.
           </p>
-
         </div>
       </div>
     </section>
 
-    <!-- SOLUCIONES -->
-
     <section class="solutions" id="soluciones">
       <div class="container">
-
         <div class="solutions-heading">
-          <span class="eyebrow"
-            data-es="SOLUCIONES"
-            data-ca="SOLUCIONS">SOLUCIONES</span>
-
-          <h2
-            data-es="Servicios concretos para necesidades reales."
-            data-ca="Serveis concrets per a necessitats reals.">
-            Servicios concretos para necesidades reales.
+          <span class="eyebrow" data-es="SOLUCIONES" data-ca="SOLUCIONS">SOLUCIONES</span>
+          <h2 data-es="Herramientas digitales para hacer más fácil tu día a día."
+              data-ca="Eines digitals per fer més fàcil el teu dia a dia.">
+            Herramientas digitales para hacer más fácil tu día a día.
           </h2>
-
-          <p
-            data-es="Trabajamos con intervenciones delimitadas. Antes de iniciar cada proyecto se concretan las tareas incluidas, las herramientas necesarias y el resultado que se entregará."
-            data-ca="Treballem amb intervencions delimitades. Abans d'iniciar cada projecte es concreten les tasques incloses, les eines necessàries i el resultat que es lliurarà.">
-            Trabajamos con intervenciones delimitadas. Antes de iniciar cada proyecto se concretan las tareas incluidas, las herramientas necesarias y el resultado que se entregará.
+          <p data-es="Cada proyecto se adapta a la actividad y a las necesidades del negocio. Definimos previamente qué se puede hacer, qué herramientas encajan y qué límites o costes pueden existir."
+             data-ca="Cada projecte s'adapta a l'activitat i a les necessitats del negoci. Definim prèviament què es pot fer, quines eines encaixen i quins límits o costos poden existir.">
+            Cada proyecto se adapta a la actividad y a las necesidades del negocio. Definimos previamente qué se puede hacer, qué herramientas encajan y qué límites o costes pueden existir.
           </p>
         </div>
 
         <div class="solution-grid">
-
           <article class="solution-card">
-            <span class="solution-number">01 / DOCUMENTACIÓN</span>
-
-            <h3
-              data-es="Organización documental"
-              data-ca="Organització documental">
-              Organización documental
-            </h3>
-
-            <p
-              data-es="Una estructura digital clara para clasificar, guardar y localizar documentos sin perder tiempo buscando archivos."
-              data-ca="Una estructura digital clara per classificar, desar i localitzar documents sense perdre temps buscant arxius.">
-              Una estructura digital clara para clasificar, guardar y localizar documentos sin perder tiempo buscando archivos.
+            <span class="solution-number">01 / PRESENCIA DIGITAL</span>
+            <h3 data-es="Páginas web" data-ca="Pàgines web">Páginas web</h3>
+            <p data-es="Creación o mejora de páginas web claras y adaptadas a la actividad del negocio, para presentar sus servicios y facilitar el contacto con clientes."
+               data-ca="Creació o millora de pàgines web clares i adaptades a l'activitat del negoci, per presentar els seus serveis i facilitar el contacte amb clients.">
+              Creación o mejora de páginas web claras y adaptadas a la actividad del negocio, para presentar sus servicios y facilitar el contacto con clientes.
             </p>
-
             <div class="deliverable">
-              <strong data-es="Qué incluye" data-ca="Què inclou">Qué incluye</strong>
-              <span
-                data-es="Estructura de carpetas, criterios de clasificación y guía breve de uso."
-                data-ca="Estructura de carpetes, criteris de classificació i guia breu d'ús.">
-                Estructura de carpetas, criterios de clasificación y guía breve de uso.
+              <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
+              <span data-es="Estructura de contenidos, diseño de páginas, adaptación a móvil y vías de contacto."
+                    data-ca="Estructura de continguts, disseny de pàgines, adaptació a mòbil i vies de contacte.">
+                Estructura de contenidos, diseño de páginas, adaptación a móvil y vías de contacto.
               </span>
             </div>
           </article>
 
           <article class="solution-card">
-            <span class="solution-number">02 / AUTOMATIZACIÓN</span>
-
-            <h3
-              data-es="Automatización administrativa"
-              data-ca="Automatització administrativa">
-              Automatización administrativa
-            </h3>
-
-            <p
-              data-es="Simplificación de una tarea repetitiva mediante la conexión de herramientas digitales compatibles."
-              data-ca="Simplificació d'una tasca repetitiva mitjançant la connexió d'eines digitals compatibles.">
-              Simplificación de una tarea repetitiva mediante la conexión de herramientas digitales compatibles.
+            <span class="solution-number">02 / ATENCIÓN AL CLIENTE</span>
+            <h3 data-es="Asistentes conversacionales" data-ca="Assistents conversacionals">Asistentes conversacionales</h3>
+            <p data-es="Asistentes de consulta para responder preguntas frecuentes, orientar a los visitantes y ayudarles a encontrar la información que necesitan."
+               data-ca="Assistents de consulta per respondre preguntes freqüents, orientar els visitants i ajudar-los a trobar la informació que necessiten.">
+              Asistentes de consulta para responder preguntas frecuentes, orientar a los visitantes y ayudarles a encontrar la información que necesitan.
             </p>
-
             <div class="deliverable">
-              <strong data-es="Qué incluye" data-ca="Què inclou">Qué incluye</strong>
-              <span
-                data-es="Un flujo de trabajo delimitado, configuración, pruebas e instrucciones básicas."
-                data-ca="Un flux de treball delimitat, configuració, proves i instruccions bàsiques.">
-                Un flujo de trabajo delimitado, configuración, pruebas e instrucciones básicas.
+              <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
+              <span data-es="Base de información revisada, configuración del asistente y pruebas de respuesta."
+                    data-ca="Base d'informació revisada, configuració de l'assistent i proves de resposta.">
+                Base de información revisada, configuración del asistente y pruebas de respuesta.
               </span>
             </div>
           </article>
 
           <article class="solution-card">
-            <span class="solution-number">03 / INTELIGENCIA ARTIFICIAL</span>
-
-            <h3
-              data-es="Asistencia con IA para documentos"
-              data-ca="Assistència amb IA per a documents">
-              Asistencia con IA para documentos
-            </h3>
-
-            <p
-              data-es="Uso de herramientas de IA para preparar borradores, resumir información y estructurar contenidos administrativos."
-              data-ca="Ús d'eines d'IA per preparar esborranys, resumir informació i estructurar continguts administratius.">
-              Uso de herramientas de IA para preparar borradores, resumir información y estructurar contenidos administrativos.
+            <span class="solution-number">03 / COMUNICACIÓN Y SOLICITUDES</span>
+            <h3 data-es="WhatsApp y gestión de solicitudes" data-ca="WhatsApp i gestió de sol·licituds">WhatsApp y gestión de solicitudes</h3>
+            <p data-es="Propuestas para facilitar el contacto con el negocio y organizar consultas, peticiones o solicitudes de reserva, según las herramientas disponibles."
+               data-ca="Propostes per facilitar el contacte amb el negoci i organitzar consultes, peticions o sol·licituds de reserva, segons les eines disponibles.">
+              Propuestas para facilitar el contacto con el negocio y organizar consultas, peticiones o solicitudes de reserva, según las herramientas disponibles.
             </p>
-
             <div class="deliverable">
-              <strong data-es="Qué incluye" data-ca="Què inclou">Qué incluye</strong>
-              <span
-                data-es="Plantillas de trabajo, instrucciones de uso y revisión de resultados."
-                data-ca="Plantilles de treball, instruccions d'ús i revisió de resultats.">
-                Plantillas de trabajo, instrucciones de uso y revisión de resultados.
+              <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
+              <span data-es="Enlaces de contacto, formularios, registro de solicitudes y avisos. Las reservas se confirman según el sistema acordado."
+                    data-ca="Enllaços de contacte, formularis, registre de sol·licituds i avisos. Les reserves es confirmen segons el sistema acordat.">
+                Enlaces de contacto, formularios, registro de solicitudes y avisos. Las reservas se confirman según el sistema acordado.
               </span>
             </div>
           </article>
 
+          <article class="solution-card">
+            <span class="solution-number">04 / PROCESOS</span>
+            <h3 data-es="Automatización de tareas" data-ca="Automatització de tasques">Automatización de tareas</h3>
+            <p data-es="Simplificación de tareas repetitivas mediante la conexión de herramientas digitales compatibles, siempre que el proceso sea viable."
+               data-ca="Simplificació de tasques repetitives mitjançant la connexió d'eines digitals compatibles, sempre que el procés sigui viable.">
+              Simplificación de tareas repetitivas mediante la conexión de herramientas digitales compatibles, siempre que el proceso sea viable.
+            </p>
+            <div class="deliverable">
+              <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
+              <span data-es="Diseño de un flujo concreto, configuración, pruebas e instrucciones básicas de uso."
+                    data-ca="Disseny d'un flux concret, configuració, proves i instruccions bàsiques d'ús.">
+                Diseño de un flujo concreto, configuración, pruebas e instrucciones básicas de uso.
+              </span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- MÉTODO -->
-
     <section class="process" id="metodo">
       <div class="container">
-
         <div class="process-heading">
-          <span class="eyebrow"
-            data-es="CÓMO TRABAJAMOS"
-            data-ca="COM TREBALLEM">CÓMO TRABAJAMOS</span>
-
-          <h2
-            data-es="Un proceso claro, de principio a fin."
-            data-ca="Un procés clar, de principi a fi.">
-            Un proceso claro, de principio a fin.
+          <span class="eyebrow" data-es="CÓMO TRABAJAMOS" data-ca="COM TREBALLEM">CÓMO TRABAJAMOS</span>
+          <h2 data-es="Primero probamos. Después, si lo autorizas, implantamos."
+              data-ca="Primer fem proves. Després, si ho autoritzes, implementem.">
+            Primero probamos. Después, si lo autorizas, implantamos.
           </h2>
         </div>
 
         <div class="process-grid">
-
           <div class="process-item">
             <span>01</span>
-            <h3 data-es="Definimos la solución" data-ca="Definim la solució">
-              Definimos la solución
-            </h3>
-            <p
-              data-es="Identificamos la tarea concreta y comprobamos que la solución propuesta sea viable."
-              data-ca="Identifiquem la tasca concreta i comprovem que la solució proposada sigui viable.">
-              Identificamos la tarea concreta y comprobamos que la solución propuesta sea viable.
+            <h3 data-es="Analizamos y hacemos una demostración" data-ca="Analitzem i fem una demostració">Analizamos y hacemos una demostración</h3>
+            <p data-es="Concretamos la necesidad y, cuando procede, preparamos una prueba en un entorno independiente con datos ficticios, sin intervenir en los sistemas reales del negocio."
+               data-ca="Concretem la necessitat i, quan escau, preparem una prova en un entorn independent amb dades fictícies, sense intervenir en els sistemes reals del negoci.">
+              Concretamos la necesidad y, cuando procede, preparamos una prueba en un entorno independiente con datos ficticios, sin intervenir en los sistemas reales del negocio.
             </p>
           </div>
 
           <div class="process-item">
             <span>02</span>
-            <h3 data-es="Acordamos el alcance" data-ca="Acordem l'abast">
-              Acordamos el alcance
-            </h3>
-            <p
-              data-es="Concretamos qué se hará, qué herramientas se utilizarán, los plazos y el presupuesto."
-              data-ca="Concretem què es farà, quines eines s'utilitzaran, els terminis i el pressupost.">
-              Concretamos qué se hará, qué herramientas se utilizarán, los plazos y el presupuesto.
+            <h3 data-es="Validamos y acordamos el alcance" data-ca="Validem i acordem l'abast">Validamos y acordamos el alcance</h3>
+            <p data-es="Revisamos el resultado, comprobamos su viabilidad y acordamos por escrito qué se implantará, con qué herramientas, permisos, plazos y posibles costes."
+               data-ca="Revisem el resultat, comprovem la seva viabilitat i acordem per escrit què s'implementarà, amb quines eines, permisos, terminis i possibles costos.">
+              Revisamos el resultado, comprobamos su viabilidad y acordamos por escrito qué se implantará, con qué herramientas, permisos, plazos y posibles costes.
             </p>
           </div>
 
           <div class="process-item">
             <span>03</span>
-            <h3 data-es="Implementamos y entregamos" data-ca="Implementem i lliurem">
-              Implementamos y entregamos
-            </h3>
-            <p
-              data-es="Realizamos el trabajo acordado, probamos el resultado y entregamos las instrucciones necesarias."
-              data-ca="Fem la feina acordada, provem el resultat i lliurem les instruccions necessàries.">
-              Realizamos el trabajo acordado, probamos el resultado y entregamos las instrucciones necesarias.
+            <h3 data-es="Implantamos y entregamos" data-ca="Implementem i lliurem">Implantamos y entregamos</h3>
+            <p data-es="Solo con autorización expresa realizamos la implantación acordada, hacemos pruebas controladas y entregamos las indicaciones necesarias para utilizar la solución."
+               data-ca="Només amb autorització expressa fem la implementació acordada, duem a terme proves controlades i lliurem les indicacions necessàries per utilitzar la solució.">
+              Solo con autorización expresa realizamos la implantación acordada, hacemos pruebas controladas y entregamos las indicaciones necesarias para utilizar la solución.
             </p>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- MENSAJE HUMANO -->
-
     <section class="human-section">
       <div class="human-image">
-        <img
-          src="https://images.unsplash.com/photo-1752650736024-d6aac18abc2d?auto=format&fit=crop&fm=jpg&q=85&w=1400"
-          alt="Dos profesionales colaborando en una tarea de trabajo"
-          loading="lazy">
+        <img src="https://images.unsplash.com/photo-1752650736024-d6aac18abc2d?auto=format&fit=crop&fm=jpg&q=85&w=1400"
+             alt="Dos profesionales colaborando en una tarea de trabajo" loading="lazy">
       </div>
-
       <div class="human-copy">
-        <span class="eyebrow"
-          data-es="TECNOLOGÍA CON SENTIDO"
-          data-ca="TECNOLOGIA AMB SENTIT">TECNOLOGÍA CON SENTIDO</span>
-
-        <h2
-          data-es="La automatización debe adaptarse a tu negocio. No al revés."
-          data-ca="L'automatització s'ha d'adaptar al teu negoci. No a l'inrevés.">
-          La automatización debe adaptarse a tu negocio. No al revés.
+        <span class="eyebrow" data-es="TECNOLOGÍA CON SENTIDO" data-ca="TECNOLOGIA AMB SENTIT">TECNOLOGÍA CON SENTIDO</span>
+        <h2 data-es="La solución debe adaptarse a tu negocio. No al revés."
+            data-ca="La solució s'ha d'adaptar al teu negoci. No a l'inrevés.">
+          La solución debe adaptarse a tu negocio. No al revés.
         </h2>
-
-        <p
-          data-es="Seleccionamos herramientas según cada necesidad y explicamos con claridad qué hacen, qué límites tienen y si generan costes externos."
-          data-ca="Seleccionem eines segons cada necessitat i expliquem amb claredat què fan, quins límits tenen i si generen costos externs.">
-          Seleccionamos herramientas según cada necesidad y explicamos con claridad qué hacen, qué límites tienen y si generan costes externos.
+        <p data-es="Trabajamos con herramientas adecuadas a cada caso. Antes de avanzar, explicamos qué puede hacer la solución, cuáles son sus límites y si existen costes o requisitos externos."
+           data-ca="Treballem amb eines adequades a cada cas. Abans d'avançar, expliquem què pot fer la solució, quins són els seus límits i si hi ha costos o requisits externs.">
+          Trabajamos con herramientas adecuadas a cada caso. Antes de avanzar, explicamos qué puede hacer la solución, cuáles son sus límites y si existen costes o requisitos externos.
         </p>
       </div>
     </section>
-
-    <!-- CONTACTO -->
 
     <section class="contact" id="contacto">
       <div class="container contact-inner">
-
-        <span class="eyebrow"
-          data-es="SIGUIENTE PASO"
-          data-ca="PAS SEGÜENT">SIGUIENTE PASO</span>
-
-        <h2
-          data-es="¿Hay una solución que encaja con tu negocio?"
-          data-ca="Hi ha una solució que encaixa amb el teu negoci?">
-          ¿Hay una solución que encaja con tu negocio?
+        <span class="eyebrow" data-es="SIGUIENTE PASO" data-ca="PAS SEGÜENT">SIGUIENTE PASO</span>
+        <h2 data-es="Cuéntanos qué necesitas mejorar en tu negocio."
+            data-ca="Explica'ns què necessites millorar al teu negoci.">
+          Cuéntanos qué necesitas mejorar en tu negocio.
         </h2>
-
-        <p
-          data-es="Escríbenos indicando qué servicio te interesa. Revisaremos si encaja con las soluciones que ofrecemos y te explicaremos el alcance, los plazos y el presupuesto antes de empezar."
-          data-ca="Escriu-nos indicant quin servei t'interessa. Revisarem si encaixa amb les solucions que oferim i t'explicarem l'abast, els terminis i el pressupost abans de començar.">
-          Escríbenos indicando qué servicio te interesa. Revisaremos si encaja con las soluciones que ofrecemos y te explicaremos el alcance, los plazos y el presupuesto antes de empezar.
+        <p data-es="Explícanos brevemente qué necesitas. Valoraremos si podemos ayudarte y, antes de empezar, concretaremos la solución, su alcance y las condiciones."
+           data-ca="Explica'ns breument què necessites. Valorarem si et podem ajudar i, abans de començar, concretarem la solució, el seu abast i les condicions.">
+          Explícanos brevemente qué necesitas. Valoraremos si podemos ayudarte y, antes de empezar, concretaremos la solución, su alcance y las condiciones.
         </p>
-
-        <a class="button" href="mailto:mptiabcn@gmail.com?subject=Informaci%C3%B3n%20sobre%20soluciones%20MPT"
-          data-es="Consultar una solución"
-          data-ca="Consultar una solució">
-          Consultar una solución
-        </a>
-
-        <a class="contact-email" href="mailto:mptiabcn@gmail.com">
-          mptiabcn@gmail.com
-        </a>
-
+        <div class="contact-actions">
+          <a class="button" href="https://wa.me/34699068773"
+             target="_blank" rel="noopener noreferrer"
+             data-es="Contactar por WhatsApp" data-ca="Contactar per WhatsApp">Contactar por WhatsApp</a>
+          <a class="button button-outline" href="mailto:mptiabcn@gmail.com?subject=Consulta%20MPT%20Consultoria"
+             data-es="Enviar un correo" data-ca="Enviar un correu">Enviar un correo</a>
+        </div>
+        <a class="contact-email" href="mailto:mptiabcn@gmail.com">mptiabcn@gmail.com</a>
+        <a class="contact-phone" href="https://wa.me/34699068773" target="_blank" rel="noopener noreferrer">WhatsApp: 699 068 773</a>
       </div>
     </section>
-
   </main>
 
   <footer>
     <div class="container footer-inner">
       <span>© 2026 MPT Consultoria</span>
-      <span
-        data-es="IA · Automatización · Gestión administrativa"
-        data-ca="IA · Automatització · Gestió administrativa">
-        IA · Automatización · Gestión administrativa
+      <span data-es="Web · Asistentes · WhatsApp · Automatización"
+            data-ca="Web · Assistents · WhatsApp · Automatització">
+        Web · Asistentes · WhatsApp · Automatización
       </span>
     </div>
   </footer>
 
+  <!-- ASISTENTE DE CONSULTAS: versión inicial con respuestas predefinidas -->
+  <button class="mpt-chat-launcher" id="mpt-chat-launcher" type="button" aria-label="Abrir asistente de MPT" aria-expanded="false" aria-controls="mpt-chat-panel">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H5l1.6-3.2A7.5 7.5 0 1 1 20 11.5Z"/><path d="M8 11h8M8 14h5"/></svg>
+  </button>
+
+  <section class="mpt-chat-panel" id="mpt-chat-panel" role="dialog" aria-label="Asistente conversacional MPT" aria-modal="false">
+    <div class="mpt-chat-head">
+      <div>
+        <strong data-es="Asistente MPT" data-ca="Assistent MPT">Asistente MPT</strong>
+        <small data-es="Consultas sobre nuestros servicios" data-ca="Consultes sobre els nostres serveis">Consultas sobre nuestros servicios</small>
+      </div>
+      <button class="mpt-chat-close" id="mpt-chat-close" type="button" aria-label="Cerrar chat">×</button>
+    </div>
+
+    <div class="mpt-chat-messages" id="mpt-chat-messages" aria-live="polite">
+      <div class="mpt-chat-message bot"
+           data-es="¡Hola! Soy el asistente virtual de MPT. Puedo orientarte sobre nuestros servicios y cómo trabajamos. ¿Qué te gustaría saber?"
+           data-ca="Hola! Soc l'assistent virtual de MPT. Puc orientar-te sobre els nostres serveis i com treballem. Què t'agradaria saber?">
+        ¡Hola! Soy el asistente virtual de MPT. Puedo orientarte sobre nuestros servicios y cómo trabajamos. ¿Qué te gustaría saber?
+      </div>
+    </div>
+
+    <div class="mpt-chat-quick">
+      <button type="button" data-question="servicios" data-es="Servicios" data-ca="Serveis">Servicios</button>
+      <button type="button" data-question="web" data-es="Páginas web" data-ca="Pàgines web">Páginas web</button>
+      <button type="button" data-question="asistente" data-es="Chatbots" data-ca="Xatbots">Chatbots</button>
+      <button type="button" data-question="precio" data-es="Precios" data-ca="Preus">Precios</button>
+      <button type="button" data-question="contacto" data-es="Contactar" data-ca="Contactar">Contactar</button>
+    </div>
+
+    <form class="mpt-chat-form" id="mpt-chat-form">
+      <input id="mpt-chat-input" type="text" autocomplete="off" maxlength="400"
+             aria-label="Escribe tu consulta" placeholder="Escribe tu consulta..."
+             data-placeholder-es="Escribe tu consulta..."
+             data-placeholder-ca="Escriu la teva consulta...">
+      <button type="submit" data-es="Enviar" data-ca="Envia">Enviar</button>
+    </form>
+
+    <p class="mpt-chat-note"
+       data-es="Asistente informativo con respuestas predefinidas. Para confirmar detalles, contacta directamente con MPT."
+       data-ca="Assistent informatiu amb respostes predefinides. Per confirmar detalls, contacta directament amb MPT.">
+      Asistente informativo con respuestas predefinidas. Para confirmar detalles, contacta directamente con MPT.
+    </p>
+  </section>
+
   <script>
+    let mptChatLanguage = 'es';
+
     function setLanguage(lang) {
       document.documentElement.lang = lang;
 
@@ -1032,8 +601,116 @@
 
       document.getElementById('lang-es').classList.toggle('active', lang === 'es');
       document.getElementById('lang-ca').classList.toggle('active', lang === 'ca');
-    }
-  </script>
 
+      mptChatLanguage = lang;
+
+      const chatInput = document.getElementById('mpt-chat-input');
+      if (chatInput) {
+        chatInput.placeholder = chatInput.getAttribute('data-placeholder-' + lang);
+      }
+    }
+
+    const mptChatPanel = document.getElementById('mpt-chat-panel');
+    const mptChatLauncher = document.getElementById('mpt-chat-launcher');
+    const mptChatMessages = document.getElementById('mpt-chat-messages');
+    const mptChatInput = document.getElementById('mpt-chat-input');
+
+    const mptChatCopy = {
+      es: {
+        servicios: 'MPT trabaja en cuatro ámbitos: páginas web, asistentes conversacionales para consultas frecuentes, gestión de solicitudes y automatización de tareas. Cada propuesta se estudia según las necesidades y herramientas del negocio.',
+        web: 'Podemos crear o mejorar una página web para presentar tu negocio, explicar tus servicios y facilitar el contacto. El alcance se concreta después de revisar qué necesitas.',
+        asistente: 'Podemos preparar un asistente para orientar a los visitantes y responder preguntas frecuentes utilizando información revisada del negocio. Esta versión de la web es una demostración con respuestas predefinidas; no utiliza IA generativa ni consulta una base de datos externa.',
+        whatsapp: 'Podemos estudiar formas de facilitar el contacto por WhatsApp y organizar solicitudes. Las automatizaciones avanzadas pueden depender de WhatsApp Business Platform y de sus condiciones o costes. MPT no accede a tu cuenta personal sin autorización.',
+        reservas: 'Podemos estudiar formularios para recibir solicitudes de reserva y sistemas de disponibilidad. Una solicitud no equivale a una reserva confirmada: el funcionamiento se define y prueba antes de implantarlo.',
+        automatizacion: 'Analizamos tareas repetitivas y valoramos si pueden simplificarse conectando herramientas compatibles. Antes de proponer una solución revisamos su viabilidad, límites y posibles costes.',
+        precio: 'No publicamos un precio único porque depende del alcance, las herramientas y los requisitos de cada proyecto. Primero revisamos la necesidad y después presentamos una propuesta con condiciones y posibles costes.',
+        metodo: 'Trabajamos en tres fases: análisis y demostración en un entorno independiente; validación y acuerdo del alcance; e implantación únicamente con autorización expresa.',
+        contacto: 'Puedes escribir a mptiabcn@gmail.com o contactar por WhatsApp en el 699 068 773. También puedes utilizar los botones de contacto de esta página.',
+        fallback: 'No tengo información suficiente para responder con seguridad a esa consulta. Puedes escribir a mptiabcn@gmail.com y revisaremos tu caso.'
+      },
+
+      ca: {
+        servicios: 'MPT treballa en quatre àmbits: pàgines web, assistents conversacionals per a consultes freqüents, gestió de sol·licituds i automatització de tasques. Cada proposta s’estudia segons les necessitats i les eines del negoci.',
+        web: 'Podem crear o millorar una pàgina web per presentar el teu negoci, explicar els teus serveis i facilitar el contacte. L’abast es concreta després de revisar què necessites.',
+        asistente: 'Podem preparar un assistent per orientar els visitants i respondre preguntes freqüents utilitzant informació revisada del negoci. Aquesta versió del web és una demostració amb respostes predefinides; no utilitza IA generativa ni consulta una base de dades externa.',
+        whatsapp: 'Podem estudiar maneres de facilitar el contacte per WhatsApp i organitzar sol·licituds. Les automatitzacions avançades poden dependre de WhatsApp Business Platform i de les seves condicions o costos. MPT no accedeix al teu compte personal sense autorització.',
+        reservas: 'Podem estudiar formularis per rebre sol·licituds de reserva i sistemes de disponibilitat. Una sol·licitud no equival a una reserva confirmada: el funcionament es defineix i es prova abans d’implantar-lo.',
+        automatizacion: 'Analitzem tasques repetitives i valorem si es poden simplificar connectant eines compatibles. Abans de proposar una solució revisem la seva viabilitat, els límits i els possibles costos.',
+        precio: 'No publiquem un preu únic perquè depèn de l’abast, les eines i els requisits de cada projecte. Primer revisem la necessitat i després presentem una proposta amb les condicions i els possibles costos.',
+        metodo: 'Treballem en tres fases: anàlisi i demostració en un entorn independent; validació i acord de l’abast; i implementació únicament amb autorització expressa.',
+        contacto: 'Pots escriure a mptiabcn@gmail.com o contactar per WhatsApp al 699 068 773. També pots utilitzar els botons de contacte d’aquesta pàgina.',
+        fallback: 'No tinc prou informació per respondre amb seguretat aquesta consulta. Pots escriure a mptiabcn@gmail.com i revisarem el teu cas.'
+      }
+    };
+
+    function addMptChatMessage(text, role) {
+      const message = document.createElement('div');
+      message.className = 'mpt-chat-message ' + role;
+      message.textContent = text;
+      mptChatMessages.appendChild(message);
+      mptChatMessages.scrollTop = mptChatMessages.scrollHeight;
+    }
+
+    function getMptChatIntent(text) {
+      const q = text.toLocaleLowerCase();
+
+      if (/precio|precios|cu[aá]nto|coste|costo|tarifa|pressupost|preu|preus|quant val/.test(q)) return 'precio';
+      if (/whatsapp|m[oó]vil|telefono|tel[eè]fon|contact/.test(q)) return 'whatsapp';
+      if (/reserva|cita|disponibilidad|disponibilitat|agenda/.test(q)) return 'reservas';
+      if (/web|p[aá]gina|pagina|sitio|lloc web/.test(q)) return 'web';
+      if (/chatbot|chat|asistente|assistent|conversacional|xatbot/.test(q)) return 'asistente';
+      if (/automat|tarea|tasca|proceso|proc[eé]s/.test(q)) return 'automatizacion';
+      if (/c[oó]mo trabaj|metod|proc[eé]s|fases|implant|implementar/.test(q)) return 'metodo';
+      if (/servicio|servicios|soluci[oó]|què feu|que haceis|qu[eé] hac[eé]is/.test(q)) return 'servicios';
+      if (/contact|correo|email|mail|hablar|parlar/.test(q)) return 'contacto';
+
+      return 'fallback';
+    }
+
+    function answerMptChat(question) {
+      const intent = getMptChatIntent(question);
+      addMptChatMessage(mptChatCopy[mptChatLanguage][intent], 'bot');
+    }
+
+    function openMptChat() {
+      mptChatPanel.classList.add('open');
+      mptChatLauncher.setAttribute('aria-expanded', 'true');
+      mptChatInput.focus();
+    }
+
+    function closeMptChat() {
+      mptChatPanel.classList.remove('open');
+      mptChatLauncher.setAttribute('aria-expanded', 'false');
+      mptChatLauncher.focus();
+    }
+
+    mptChatLauncher.addEventListener('click', () => {
+      mptChatPanel.classList.contains('open') ? closeMptChat() : openMptChat();
+    });
+
+    document.getElementById('mpt-chat-close').addEventListener('click', closeMptChat);
+
+    document.getElementById('mpt-chat-form').addEventListener('submit', event => {
+      event.preventDefault();
+
+      const question = mptChatInput.value.trim();
+      if (!question) return;
+
+      addMptChatMessage(question, 'user');
+      mptChatInput.value = '';
+      answerMptChat(question);
+    });
+
+    document.querySelectorAll('.mpt-chat-quick button').forEach(button => {
+      button.addEventListener('click', () => {
+        const key = button.getAttribute('data-question');
+        addMptChatMessage(button.textContent.trim(), 'user');
+        addMptChatMessage(
+          mptChatCopy[mptChatLanguage][key] || mptChatCopy[mptChatLanguage].fallback,
+          'bot'
+        );
+      });
+    });
+  </script>
 </body>
 </html>
