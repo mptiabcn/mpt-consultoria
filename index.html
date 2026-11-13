@@ -143,23 +143,24 @@
     .solution-grid {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
     }
-    .solution-card {
-      background: white; padding: 25px; border: 1px solid #e8e8e8;
-      display: flex; flex-direction: column; min-height: 440px;
-    }
 
-    /* NUEVAS FOTOGRAFÍAS DE LOS SERVICIOS */
+    /* FOTOGRAFÍAS: SE MUESTRAN COMPLETAS, SIN RECORTAR */
     .solution-image {
+      display: block;
       width: 100%;
-      height: 155px;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       object-position: center;
       border-radius: 2px;
       margin-bottom: 22px;
     }
 
+    .solution-card {
+      background: white; padding: 32px 25px; border: 1px solid #e8e8e8;
+      display: flex; flex-direction: column; min-height: 360px;
+    }
     .solution-number {
-      color: #a4a4a4; font-size: 12px; letter-spacing: 1px; margin-bottom: 18px;
+      color: #a4a4a4; font-size: 12px; letter-spacing: 1px; margin-bottom: 26px;
     }
     .solution-card h3 { font-size: 21px; margin-bottom: 15px; }
     .solution-card p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
@@ -259,6 +260,11 @@
     .mpt-chat-form button { border: 0; border-radius: 7px; background: var(--green-dark); color: #fff; padding: 0 15px; font: 600 12px 'Inter', sans-serif; cursor: pointer; }
     .mpt-chat-note { padding: 0 13px 10px; margin: 0; color: #858b89; background: #fff; font-size: 10px; line-height: 1.4; }
 
+    @media (max-width: 480px) {
+      .mpt-chat-launcher { right: 16px; bottom: 16px; width: 56px; height: 56px; }
+      .mpt-chat-panel { right: 10px; bottom: 82px; width: calc(100vw - 20px); height: min(570px, calc(100dvh - 105px)); }
+    }
+
     /* MÓVILES */
     @media (max-width: 1050px) {
       .solution-grid { grid-template-columns: repeat(2, 1fr); }
@@ -291,13 +297,10 @@
       .about::before { width: 250px; height: 250px; right: -65px; }
       .solution-grid, .process-grid { grid-template-columns: 1fr; }
       .solution-card { min-height: auto; }
-      .solution-image { height: 190px; }
       .human-section { grid-template-columns: 1fr; }
       .human-image img { min-height: 280px; height: 280px; }
       .human-copy { padding: 48px 7%; }
       .footer-inner { flex-direction: column; text-align: center; }
-      .mpt-chat-launcher { right: 16px; bottom: 16px; width: 56px; height: 56px; }
-      .mpt-chat-panel { right: 10px; bottom: 82px; width: calc(100vw - 20px); height: min(570px, calc(100dvh - 105px)); }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -395,8 +398,8 @@
 
         <div class="solution-grid">
           <article class="solution-card">
-            <img class="solution-image" src="01-peluqueria.jpg" alt="Peluquera atendiendo a una clienta en una peluquería de proximidad" loading="lazy">
             <span class="solution-number">01 / PRESENCIA DIGITAL</span>
+            <img class="solution-image" src="01-peluqueria.jpg" alt="Imagen de una peluquería" loading="lazy">
             <h3 data-es="Páginas web" data-ca="Pàgines web">Páginas web</h3>
             <p data-es="Creación o mejora de páginas web claras y adaptadas a la actividad del negocio, para presentar sus servicios y facilitar el contacto con clientes."
                data-ca="Creació o millora de pàgines web clares i adaptades a l'activitat del negoci, per presentar els seus serveis i facilitar el contacte amb clients.">
@@ -412,8 +415,8 @@
           </article>
 
           <article class="solution-card">
-            <img class="solution-image" src="02-veterinaria.jpg" alt="Veterinaria atendiendo a un perro en una clínica veterinaria" loading="lazy">
             <span class="solution-number">02 / ATENCIÓN AL CLIENTE</span>
+            <img class="solution-image" src="02-veterinaria.jpg" alt="Imagen de una clínica veterinaria" loading="lazy">
             <h3 data-es="Asistentes conversacionales" data-ca="Assistents conversacionals">Asistentes conversacionales</h3>
             <p data-es="Asistentes de consulta para responder preguntas frecuentes, orientar a los visitantes y ayudarles a encontrar la información que necesitan."
                data-ca="Assistents de consulta per respondre preguntes freqüents, orientar els visitants i ajudar-los a trobar la informació que necessiten.">
@@ -429,8 +432,8 @@
           </article>
 
           <article class="solution-card">
-            <img class="solution-image" src="03-tienda-ropa.jpg" alt="Comerciante de una tienda de ropa utilizando su teléfono móvil" loading="lazy">
             <span class="solution-number">03 / COMUNICACIÓN Y SOLICITUDES</span>
+            <img class="solution-image" src="03-tienda-ropa.jpg" alt="Imagen de una tienda de ropa" loading="lazy">
             <h3 data-es="WhatsApp y gestión de solicitudes" data-ca="WhatsApp i gestió de sol·licituds">WhatsApp y gestión de solicitudes</h3>
             <p data-es="Propuestas para facilitar el contacto con el negocio y organizar consultas, peticiones o solicitudes de reserva, según las herramientas disponibles."
                data-ca="Propostes per facilitar el contacte amb el negoci i organitzar consultes, peticions o sol·licituds de reserva, segons les eines disponibles.">
@@ -446,8 +449,8 @@
           </article>
 
           <article class="solution-card">
-            <img class="solution-image" src="04-floristeria.jpg" alt="Florista organizando su trabajo en una floristería de barrio" loading="lazy">
             <span class="solution-number">04 / PROCESOS</span>
+            <img class="solution-image" src="04-floristeria.jpg" alt="Imagen de una floristería" loading="lazy">
             <h3 data-es="Automatización de tareas" data-ca="Automatització de tasques">Automatización de tareas</h3>
             <p data-es="Simplificación de tareas repetitivas mediante la conexión de herramientas digitales compatibles, siempre que el proceso sea viable."
                data-ca="Simplificació de tasques repetitives mitjançant la connexió d'eines digitals compatibles, sempre que el procés sigui viable.">
@@ -558,7 +561,7 @@
     </div>
   </footer>
 
-  <!-- ASISTENTE DE CONSULTAS: versión inicial con respuestas predefinidas -->
+  <!-- ASISTENTE DE CONSULTAS -->
   <button class="mpt-chat-launcher" id="mpt-chat-launcher" type="button" aria-label="Abrir asistente de MPT" aria-expanded="false" aria-controls="mpt-chat-panel">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H5l1.6-3.2A7.5 7.5 0 1 1 20 11.5Z"/><path d="M8 11h8M8 14h5"/></svg>
   </button>
@@ -573,9 +576,7 @@
     </div>
 
     <div class="mpt-chat-messages" id="mpt-chat-messages" aria-live="polite">
-      <div class="mpt-chat-message bot"
-           data-es="¡Hola! Soy el asistente virtual de MPT. Puedo orientarte sobre nuestros servicios y cómo trabajamos. ¿Qué te gustaría saber?"
-           data-ca="Hola! Soc l'assistent virtual de MPT. Puc orientar-te sobre els nostres serveis i com treballem. Què t'agradaria saber?">
+      <div class="mpt-chat-message bot" data-es="¡Hola! Soy el asistente virtual de MPT. Puedo orientarte sobre nuestros servicios y cómo trabajamos. ¿Qué te gustaría saber?" data-ca="Hola! Soc l'assistent virtual de MPT. Puc orientar-te sobre els nostres serveis i com treballem. Què t'agradaria saber?">
         ¡Hola! Soy el asistente virtual de MPT. Puedo orientarte sobre nuestros servicios y cómo trabajamos. ¿Qué te gustaría saber?
       </div>
     </div>
@@ -589,16 +590,11 @@
     </div>
 
     <form class="mpt-chat-form" id="mpt-chat-form">
-      <input id="mpt-chat-input" type="text" autocomplete="off" maxlength="400"
-             aria-label="Escribe tu consulta" placeholder="Escribe tu consulta..."
-             data-placeholder-es="Escribe tu consulta..."
-             data-placeholder-ca="Escriu la teva consulta...">
+      <input id="mpt-chat-input" type="text" autocomplete="off" maxlength="400" aria-label="Escribe tu consulta" placeholder="Escribe tu consulta..." data-placeholder-es="Escribe tu consulta..." data-placeholder-ca="Escriu la teva consulta...">
       <button type="submit" data-es="Enviar" data-ca="Envia">Enviar</button>
     </form>
 
-    <p class="mpt-chat-note"
-       data-es="Asistente informativo con respuestas predefinidas. Para confirmar detalles, contacta directamente con MPT."
-       data-ca="Assistent informatiu amb respostes predefinides. Per confirmar detalls, contacta directament amb MPT.">
+    <p class="mpt-chat-note" data-es="Asistente informativo con respuestas predefinidas. Para confirmar detalles, contacta directamente con MPT." data-ca="Assistent informatiu amb respostes predefinides. Per confirmar detalls, contacta directament amb MPT.">
       Asistente informativo con respuestas predefinidas. Para confirmar detalles, contacta directamente con MPT.
     </p>
   </section>
