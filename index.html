@@ -144,11 +144,22 @@
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
     }
     .solution-card {
-      background: white; padding: 32px 25px; border: 1px solid #e8e8e8;
-      display: flex; flex-direction: column; min-height: 360px;
+      background: white; padding: 25px; border: 1px solid #e8e8e8;
+      display: flex; flex-direction: column; min-height: 440px;
     }
+
+    /* NUEVAS FOTOGRAFÍAS DE LOS SERVICIOS */
+    .solution-image {
+      width: 100%;
+      height: 155px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 2px;
+      margin-bottom: 22px;
+    }
+
     .solution-number {
-      color: #a4a4a4; font-size: 12px; letter-spacing: 1px; margin-bottom: 26px;
+      color: #a4a4a4; font-size: 12px; letter-spacing: 1px; margin-bottom: 18px;
     }
     .solution-card h3 { font-size: 21px; margin-bottom: 15px; }
     .solution-card p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
@@ -247,10 +258,6 @@
     .mpt-chat-form input { min-width: 0; flex: 1; border: 1px solid #dfe3e2; border-radius: 7px; padding: 11px 12px; font: 13px 'Inter', sans-serif; color: var(--ink); }
     .mpt-chat-form button { border: 0; border-radius: 7px; background: var(--green-dark); color: #fff; padding: 0 15px; font: 600 12px 'Inter', sans-serif; cursor: pointer; }
     .mpt-chat-note { padding: 0 13px 10px; margin: 0; color: #858b89; background: #fff; font-size: 10px; line-height: 1.4; }
-    @media (max-width: 480px) {
-      .mpt-chat-launcher { right: 16px; bottom: 16px; width: 56px; height: 56px; }
-      .mpt-chat-panel { right: 10px; bottom: 82px; width: calc(100vw - 20px); height: min(570px, calc(100dvh - 105px)); }
-    }
 
     /* MÓVILES */
     @media (max-width: 1050px) {
@@ -284,10 +291,13 @@
       .about::before { width: 250px; height: 250px; right: -65px; }
       .solution-grid, .process-grid { grid-template-columns: 1fr; }
       .solution-card { min-height: auto; }
+      .solution-image { height: 190px; }
       .human-section { grid-template-columns: 1fr; }
       .human-image img { min-height: 280px; height: 280px; }
       .human-copy { padding: 48px 7%; }
       .footer-inner { flex-direction: column; text-align: center; }
+      .mpt-chat-launcher { right: 16px; bottom: 16px; width: 56px; height: 56px; }
+      .mpt-chat-panel { right: 10px; bottom: 82px; width: calc(100vw - 20px); height: min(570px, calc(100dvh - 105px)); }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -385,6 +395,7 @@
 
         <div class="solution-grid">
           <article class="solution-card">
+            <img class="solution-image" src="01-peluqueria.jpg" alt="Peluquera atendiendo a una clienta en una peluquería de proximidad" loading="lazy">
             <span class="solution-number">01 / PRESENCIA DIGITAL</span>
             <h3 data-es="Páginas web" data-ca="Pàgines web">Páginas web</h3>
             <p data-es="Creación o mejora de páginas web claras y adaptadas a la actividad del negocio, para presentar sus servicios y facilitar el contacto con clientes."
@@ -401,6 +412,7 @@
           </article>
 
           <article class="solution-card">
+            <img class="solution-image" src="02-veterinaria.jpg" alt="Veterinaria atendiendo a un perro en una clínica veterinaria" loading="lazy">
             <span class="solution-number">02 / ATENCIÓN AL CLIENTE</span>
             <h3 data-es="Asistentes conversacionales" data-ca="Assistents conversacionals">Asistentes conversacionales</h3>
             <p data-es="Asistentes de consulta para responder preguntas frecuentes, orientar a los visitantes y ayudarles a encontrar la información que necesitan."
@@ -417,6 +429,7 @@
           </article>
 
           <article class="solution-card">
+            <img class="solution-image" src="03-tienda-ropa.jpg" alt="Comerciante de una tienda de ropa utilizando su teléfono móvil" loading="lazy">
             <span class="solution-number">03 / COMUNICACIÓN Y SOLICITUDES</span>
             <h3 data-es="WhatsApp y gestión de solicitudes" data-ca="WhatsApp i gestió de sol·licituds">WhatsApp y gestión de solicitudes</h3>
             <p data-es="Propuestas para facilitar el contacto con el negocio y organizar consultas, peticiones o solicitudes de reserva, según las herramientas disponibles."
@@ -433,6 +446,7 @@
           </article>
 
           <article class="solution-card">
+            <img class="solution-image" src="04-floristeria.jpg" alt="Florista organizando su trabajo en una floristería de barrio" loading="lazy">
             <span class="solution-number">04 / PROCESOS</span>
             <h3 data-es="Automatización de tareas" data-ca="Automatització de tasques">Automatización de tareas</h3>
             <p data-es="Simplificación de tareas repetitivas mediante la conexión de herramientas digitales compatibles, siempre que el proceso sea viable."
