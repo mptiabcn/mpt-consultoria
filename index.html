@@ -55,6 +55,25 @@
       font-weight: 600; transition: color .2s ease;
     }
     .main-nav a:hover { color: var(--green); }
+
+    /* NAVEGACIÓN DE LOS SIETE SERVICIOS */
+    .service-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 18px;
+      padding: 0 0 14px;
+    }
+    .service-nav a {
+      text-decoration: none;
+      color: #454b49;
+      font-size: 12px;
+      font-weight: 600;
+      transition: color .2s ease;
+    }
+    .service-nav a:hover { color: var(--green); }
+
     .language {
       display: flex; align-items: center; gap: 7px;
       white-space: nowrap; font-size: 13px;
@@ -274,6 +293,8 @@
       .brand-logo { width: 155px; }
       .main-nav { gap: 15px; }
       .main-nav a { font-size: 12px; }
+      .service-nav { justify-content: center; gap: 12px; }
+      .service-nav a { font-size: 11px; }
       .hero-grid { gap: 35px; }
       .hero-image, .hero-image img { min-height: 390px; height: 390px; }
     }
@@ -287,6 +308,8 @@
       .brand-logo { width: 145px; }
       .main-nav { width: 100%; justify-content: center; gap: 17px; }
       .main-nav a { font-size: 11px; }
+      .service-nav { justify-content: center; gap: 8px 13px; padding-bottom: 12px; }
+      .service-nav a { font-size: 10px; }
       .language { position: absolute; right: 5%; top: 17px; }
       .hero { padding: 55px 0 60px; }
       .hero-grid { grid-template-columns: 1fr; gap: 35px; }
@@ -328,6 +351,18 @@
         <span>|</span>
         <button type="button" id="lang-ca" onclick="setLanguage('ca')">CA</button>
       </div>
+    </div>
+
+    <div class="container">
+      <nav class="service-nav" aria-label="Nuestros siete servicios">
+        <a href="desarrollo-web.html" data-es="Desarrollo web" data-ca="Desenvolupament web">Desarrollo web</a>
+        <a href="asistentes-conversacionales.html" data-es="Asistentes IA" data-ca="Assistents IA">Asistentes IA</a>
+        <a href="whatsapp-reservas.html" data-es="WhatsApp y reservas" data-ca="WhatsApp i reserves">WhatsApp y reservas</a>
+        <a href="automatizaciones.html" data-es="Automatización" data-ca="Automatització">Automatización</a>
+        <a href="agentes-voz.html" data-es="Agentes de voz" data-ca="Agents de veu">Agentes de voz</a>
+        <a href="marketing-digital-ia.html" data-es="Marketing IA" data-ca="Màrqueting IA">Marketing IA</a>
+        <a href="soluciones-a-medida.html" data-es="Soluciones a medida" data-ca="Solucions a mida">Soluciones a medida</a>
+      </nav>
     </div>
   </header>
 
@@ -397,73 +432,135 @@
         </div>
 
         <div class="solution-grid">
-          <article class="solution-card">
-            <span class="solution-number">01 / PRESENCIA DIGITAL</span>
-            <img class="solution-image" src="01-peluqueria.jpg" alt="Imagen de una peluquería" loading="lazy">
-            <h3 data-es="Páginas web" data-ca="Pàgines web">Páginas web</h3>
-            <p data-es="Creación o mejora de páginas web claras y adaptadas a la actividad del negocio, para presentar sus servicios y facilitar el contacto con clientes."
-               data-ca="Creació o millora de pàgines web clares i adaptades a l'activitat del negoci, per presentar els seus serveis i facilitar el contacte amb clients.">
-              Creación o mejora de páginas web claras y adaptadas a la actividad del negocio, para presentar sus servicios y facilitar el contacto con clientes.
-            </p>
-            <div class="deliverable">
-              <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
-              <span data-es="Estructura de contenidos, diseño de páginas, adaptación a móvil y vías de contacto."
-                    data-ca="Estructura de continguts, disseny de pàgines, adaptació a mòbil i vies de contacte.">
-                Estructura de contenidos, diseño de páginas, adaptación a móvil y vías de contacto.
-              </span>
-            </div>
-          </article>
+          <a href="desarrollo-web.html" target="_blank" rel="noopener noreferrer" style="display:block;color:inherit;text-decoration:none;">
+            <article class="solution-card">
+              <span class="solution-number">01 / PRESENCIA DIGITAL</span>
+              <img class="solution-image" src="01-peluqueria.jpg" alt="Imagen de una peluquería" loading="lazy">
+              <h3 data-es="Páginas web" data-ca="Pàgines web">Páginas web</h3>
+              <p data-es="Creación o mejora de páginas web claras y adaptadas a la actividad del negocio, para presentar sus servicios y facilitar el contacto con clientes."
+                 data-ca="Creació o millora de pàgines web clares i adaptades a l'activitat del negoci, per presentar els seus serveis i facilitar el contacte amb clients.">
+                Creación o mejora de páginas web claras y adaptadas a la actividad del negocio, para presentar sus servicios y facilitar el contacto con clientes.
+              </p>
+              <div class="deliverable">
+                <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
+                <span data-es="Estructura de contenidos, diseño de páginas, adaptación a móvil y vías de contacto."
+                      data-ca="Estructura de continguts, disseny de pàgines, adaptació a mòbil i vies de contacte.">
+                  Estructura de contenidos, diseño de páginas, adaptación a móvil y vías de contacto.
+                </span>
+              </div>
+            </article>
+          </a>
 
-          <article class="solution-card">
-            <span class="solution-number">02 / ATENCIÓN AL CLIENTE</span>
-            <img class="solution-image" src="02-veterinaria.jpg" alt="Imagen de una clínica veterinaria" loading="lazy">
-            <h3 data-es="Asistentes conversacionales" data-ca="Assistents conversacionals">Asistentes conversacionales</h3>
-            <p data-es="Asistentes de consulta para responder preguntas frecuentes, orientar a los visitantes y ayudarles a encontrar la información que necesitan."
-               data-ca="Assistents de consulta per respondre preguntes freqüents, orientar els visitants i ajudar-los a trobar la informació que necessiten.">
-              Asistentes de consulta para responder preguntas frecuentes, orientar a los visitantes y ayudarles a encontrar la información que necesitan.
-            </p>
-            <div class="deliverable">
-              <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
-              <span data-es="Base de información revisada, configuración del asistente y pruebas de respuesta."
-                    data-ca="Base d'informació revisada, configuració de l'assistent i proves de resposta.">
-                Base de información revisada, configuración del asistente y pruebas de respuesta.
-              </span>
-            </div>
-          </article>
+          <a href="asistentes-conversacionales.html" target="_blank" rel="noopener noreferrer" style="display:block;color:inherit;text-decoration:none;">
+            <article class="solution-card">
+              <span class="solution-number">02 / ATENCIÓN AL CLIENTE</span>
+              <img class="solution-image" src="02-veterinaria.jpg" alt="Imagen de una clínica veterinaria" loading="lazy">
+              <h3 data-es="Asistentes conversacionales" data-ca="Assistents conversacionals">Asistentes conversacionales</h3>
+              <p data-es="Asistentes de consulta para responder preguntas frecuentes, orientar a los visitantes y ayudarles a encontrar la información que necesitan."
+                 data-ca="Assistents de consulta per respondre preguntes freqüents, orientar els visitants i ajudar-los a trobar la informació que necessiten.">
+                Asistentes de consulta para responder preguntas frecuentes, orientar a los visitantes y ayudarles a encontrar la información que necesitan.
+              </p>
+              <div class="deliverable">
+                <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
+                <span data-es="Base de información revisada, configuración del asistente y pruebas de respuesta."
+                      data-ca="Base d'informació revisada, configuració de l'assistent i proves de resposta.">
+                  Base de información revisada, configuración del asistente y pruebas de respuesta.
+                </span>
+              </div>
+            </article>
+          </a>
 
-          <article class="solution-card">
-            <span class="solution-number">03 / COMUNICACIÓN Y SOLICITUDES</span>
-            <img class="solution-image" src="03-tienda-ropa.jpg" alt="Imagen de una tienda de ropa" loading="lazy">
-            <h3 data-es="WhatsApp y gestión de solicitudes" data-ca="WhatsApp i gestió de sol·licituds">WhatsApp y gestión de solicitudes</h3>
-            <p data-es="Propuestas para facilitar el contacto con el negocio y organizar consultas, peticiones o solicitudes de reserva, según las herramientas disponibles."
-               data-ca="Propostes per facilitar el contacte amb el negoci i organitzar consultes, peticions o sol·licituds de reserva, segons les eines disponibles.">
-              Propuestas para facilitar el contacto con el negocio y organizar consultas, peticiones o solicitudes de reserva, según las herramientas disponibles.
-            </p>
-            <div class="deliverable">
-              <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
-              <span data-es="Enlaces de contacto, formularios, registro de solicitudes y avisos. Las reservas se confirman según el sistema acordado."
-                    data-ca="Enllaços de contacte, formularis, registre de sol·licituds i avisos. Les reserves es confirmen segons el sistema acordat.">
-                Enlaces de contacto, formularios, registro de solicitudes y avisos. Las reservas se confirman según el sistema acordado.
-              </span>
-            </div>
-          </article>
+          <a href="whatsapp-reservas.html" target="_blank" rel="noopener noreferrer" style="display:block;color:inherit;text-decoration:none;">
+            <article class="solution-card">
+              <span class="solution-number">03 / COMUNICACIÓN Y SOLICITUDES</span>
+              <img class="solution-image" src="03-tienda-ropa.jpg" alt="Imagen de una tienda de ropa" loading="lazy">
+              <h3 data-es="WhatsApp y gestión de solicitudes" data-ca="WhatsApp i gestió de sol·licituds">WhatsApp y gestión de solicitudes</h3>
+              <p data-es="Propuestas para facilitar el contacto con el negocio y organizar consultas, peticiones o solicitudes de reserva, según las herramientas disponibles."
+                 data-ca="Propostes per facilitar el contacte amb el negoci i organitzar consultes, peticions o sol·licituds de reserva, segons les eines disponibles.">
+                Propuestas para facilitar el contacto con el negocio y organizar consultas, peticiones o solicitudes de reserva, según las herramientas disponibles.
+              </p>
+              <div class="deliverable">
+                <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
+                <span data-es="Enlaces de contacto, formularios, registro de solicitudes y avisos. Las reservas se confirman según el sistema acordado."
+                      data-ca="Enllaços de contacte, formularis, registre de sol·licituds i avisos. Les reserves es confirmen segons el sistema acordat.">
+                  Enlaces de contacto, formularios, registro de solicitudes y avisos. Las reservas se confirman según el sistema acordado.
+                </span>
+              </div>
+            </article>
+          </a>
 
-          <article class="solution-card">
-            <span class="solution-number">04 / PROCESOS</span>
-            <img class="solution-image" src="04-floristeria.jpg" alt="Imagen de una floristería" loading="lazy">
-            <h3 data-es="Automatización de tareas" data-ca="Automatització de tasques">Automatización de tareas</h3>
-            <p data-es="Simplificación de tareas repetitivas mediante la conexión de herramientas digitales compatibles, siempre que el proceso sea viable."
-               data-ca="Simplificació de tasques repetitives mitjançant la connexió d'eines digitals compatibles, sempre que el procés sigui viable.">
-              Simplificación de tareas repetitivas mediante la conexión de herramientas digitales compatibles, siempre que el proceso sea viable.
-            </p>
-            <div class="deliverable">
-              <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
-              <span data-es="Diseño de un flujo concreto, configuración, pruebas e instrucciones básicas de uso."
-                    data-ca="Disseny d'un flux concret, configuració, proves i instruccions bàsiques d'ús.">
-                Diseño de un flujo concreto, configuración, pruebas e instrucciones básicas de uso.
-              </span>
-            </div>
-          </article>
+          <a href="automatizaciones.html" target="_blank" rel="noopener noreferrer" style="display:block;color:inherit;text-decoration:none;">
+            <article class="solution-card">
+              <span class="solution-number">04 / PROCESOS</span>
+              <img class="solution-image" src="04-floristeria.jpg" alt="Imagen de una floristería" loading="lazy">
+              <h3 data-es="Automatización de tareas" data-ca="Automatització de tasques">Automatización de tareas</h3>
+              <p data-es="Simplificación de tareas repetitivas mediante la conexión de herramientas digitales compatibles, siempre que el proceso sea viable."
+                 data-ca="Simplificació de tasques repetitives mitjançant la connexió d'eines digitals compatibles, sempre que el procés sigui viable.">
+                Simplificación de tareas repetitivas mediante la conexión de herramientas digitales compatibles, siempre que el proceso sea viable.
+              </p>
+              <div class="deliverable">
+                <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
+                <span data-es="Diseño de un flujo concreto, configuración, pruebas e instrucciones básicas de uso."
+                      data-ca="Disseny d'un flux concret, configuració, proves i instruccions bàsiques d'ús.">
+                  Diseño de un flujo concreto, configuración, pruebas e instrucciones básicas de uso.
+                </span>
+              </div>
+            </article>
+          </a>
+
+          <a href="agentes-voz.html" target="_blank" rel="noopener noreferrer" style="display:block;color:inherit;text-decoration:none;">
+            <article class="solution-card">
+              <span class="solution-number">05 / ATENCIÓN TELEFÓNICA</span>
+              <h3 data-es="Agentes de voz e IA telefónica" data-ca="Agents de veu i IA telefònica">Agentes de voz e IA telefónica</h3>
+              <p data-es="Soluciones de atención telefónica automatizada para responder llamadas, ofrecer información y recoger solicitudes, según las necesidades y herramientas disponibles."
+                 data-ca="Solucions d'atenció telefònica automatitzada per respondre trucades, oferir informació i recollir sol·licituds, segons les necessitats i les eines disponibles.">
+                Soluciones de atención telefónica automatizada para responder llamadas, ofrecer información y recoger solicitudes, según las necesidades y herramientas disponibles.
+              </p>
+              <div class="deliverable">
+                <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
+                <span data-es="Diseño del flujo de conversación, configuración del agente y pruebas de funcionamiento."
+                      data-ca="Disseny del flux de conversa, configuració de l'agent i proves de funcionament.">
+                  Diseño del flujo de conversación, configuración del agente y pruebas de funcionamiento.
+                </span>
+              </div>
+            </article>
+          </a>
+
+          <a href="marketing-digital-ia.html" target="_blank" rel="noopener noreferrer" style="display:block;color:inherit;text-decoration:none;">
+            <article class="solution-card">
+              <span class="solution-number">06 / MARKETING DIGITAL</span>
+              <h3 data-es="Marketing digital y contenidos con IA" data-ca="Màrqueting digital i continguts amb IA">Marketing digital y contenidos con IA</h3>
+              <p data-es="Apoyo en la creación y organización de contenidos digitales para comunicar mejor los servicios del negocio en su web y canales digitales."
+                 data-ca="Suport en la creació i organització de continguts digitals per comunicar millor els serveis del negoci al seu web i canals digitals.">
+                Apoyo en la creación y organización de contenidos digitales para comunicar mejor los servicios del negocio en su web y canales digitales.
+              </p>
+              <div class="deliverable">
+                <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
+                <span data-es="Textos, ideas de publicaciones, recursos gráficos y materiales de comunicación adaptados al proyecto."
+                      data-ca="Textos, idees de publicacions, recursos gràfics i materials de comunicació adaptats al projecte.">
+                  Textos, ideas de publicaciones, recursos gráficos y materiales de comunicación adaptados al proyecto.
+                </span>
+              </div>
+            </article>
+          </a>
+
+          <a href="soluciones-a-medida.html" target="_blank" rel="noopener noreferrer" style="display:block;color:inherit;text-decoration:none;">
+            <article class="solution-card">
+              <span class="solution-number">07 / SOLUCIONES PERSONALIZADAS</span>
+              <h3 data-es="Soluciones digitales a medida" data-ca="Solucions digitals a mida">Soluciones digitales a medida</h3>
+              <p data-es="Estudio y diseño de soluciones digitales para necesidades concretas que no encajan en un servicio estándar, combinando herramientas compatibles cuando sea viable."
+                 data-ca="Estudi i disseny de solucions digitals per a necessitats concretes que no encaixen en un servei estàndard, combinant eines compatibles quan sigui viable.">
+                Estudio y diseño de soluciones digitales para necesidades concretas que no encajan en un servicio estándar, combinando herramientas compatibles cuando sea viable.
+              </p>
+              <div class="deliverable">
+                <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
+                <span data-es="Análisis de necesidades, propuesta de solución, definición del alcance y pruebas."
+                      data-ca="Anàlisi de necessitats, proposta de solució, definició de l'abast i proves.">
+                  Análisis de necesidades, propuesta de solución, definición del alcance y pruebas.
+                </span>
+              </div>
+            </article>
+          </a>
         </div>
       </div>
     </section>
