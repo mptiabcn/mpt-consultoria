@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MPT Consultoria. Páginas web, asistentes conversacionales, gestión de solicitudes y automatización para pequeños negocios.">
+  <meta name="description" content="MPT Consultoria. Páginas web, asistentes inteligentes, gestión de solicitudes y marketing digital con IA para pequeños negocios.">
   <meta name="theme-color" content="#ffffff">
   <title>MPT Consultoria | Soluciones digitales para pequeños negocios</title>
 
@@ -18,6 +18,7 @@
       --muted: #707575;
       --green: #333838;
       --green-dark: #242929;
+      --accent: #159fbd;
       --cream: #f5f5f5;
       --line: #e9e9e9;
       --white: #ffffff;
@@ -101,7 +102,8 @@
     }
     .hero-copy { max-width: 570px; }
     .hero h1 { margin-bottom: 24px; }
-    .hero h1 span { color: var(--green); }
+    .accent { color: var(--accent); }
+    .hero h1 span { color: var(--accent); }
     .hero-copy p {
       color: var(--muted); font-size: 17px; max-width: 520px;
       margin-bottom: 30px;
@@ -156,13 +158,45 @@
     }
 
     .solution-card {
-      background: white; padding: 32px 25px; border: 1px solid #e8e8e8;
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      padding: 30px 25px 28px;
+      border: 1px solid #e6e9eb;
+      border-top: 0;
+      border-radius: 3px;
       display: flex; flex-direction: column; min-height: 360px;
+      box-shadow: 0 7px 22px rgba(28, 48, 58, .045);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    /* La misma banda degradada en las cuatro tarjetas, inspirada en el aro del logo MPT */
+    .solution-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #092b5b 0%, #075f9d 34%, #159fc4 68%, #55cbd0 100%);
+    }
+    .solution-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 34px rgba(28, 48, 58, .11);
     }
     .solution-number {
-      color: #a4a4a4; font-size: 12px; letter-spacing: 1px; margin-bottom: 26px;
+      display: inline-flex;
+      align-self: flex-start;
+      align-items: center;
+      min-height: 27px;
+      padding: 5px 10px;
+      color: #17466d;
+      background: #f3f5f6;
+      border-radius: 2px;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.05px;
+      margin-bottom: 22px;
     }
-    .solution-card h3 { font-size: 21px; margin-bottom: 15px; }
+    .solution-card h3 {
+      position: relative;
+      font-size: 21px; line-height: 1.25; margin-bottom: 15px;
+    }
     .solution-card p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
     .deliverable {
       margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line);
@@ -171,6 +205,24 @@
     .deliverable strong {
       display: block; color: var(--green-dark); margin-bottom: 5px;
     }
+
+
+
+    /* DECLARACIÓN DE POSICIONAMIENTO MPT */
+    .brand-statement {
+      padding: 82px 0; background: #fff; text-align: center;
+      position: relative; overflow: hidden; isolation: isolate;
+    }
+    .brand-statement::before {
+      content: ""; position: absolute; z-index: -1; left: 50%; top: 50%;
+      transform: translate(-50%, -50%); width: min(430px, 70vw); height: min(430px, 70vw);
+      background-image: url("Logotipo%20circular%20MPT%20de%20IA%20y%20automatizaci%C3%B3n.png");
+      background-repeat: no-repeat; background-position: center; background-size: contain;
+      opacity: .045; pointer-events: none;
+    }
+    .brand-statement-inner { max-width: 860px; margin: 0 auto; position: relative; }
+    .brand-statement h2 { font-size: clamp(30px, 4vw, 48px); margin-bottom: 20px; }
+    .brand-statement p { max-width: 760px; margin: 0 auto; color: var(--muted); font-size: clamp(16px, 2vw, 20px); }
 
     /* MÉTODO */
     .process { padding: 105px 0; }
@@ -212,14 +264,37 @@
       display: flex; justify-content: center; align-items: center;
       flex-wrap: wrap; gap: 12px;
     }
-    .contact-email {
-      display: block; margin-top: 20px; color: var(--green-dark);
-      font-size: 14px; text-decoration: none;
+    /* Botones de contacto con el degradado corporativo del aro del logo MPT */
+    .contact-actions .button:first-child {
+      background: linear-gradient(100deg, #092b5b 0%, #075f9d 34%, #159fc4 68%, #55cbd0 100%);
+      border: 1px solid transparent;
+      color: #fff;
+      box-shadow: 0 5px 16px rgba(7, 95, 157, .16);
     }
-    .contact-phone {
-      display: block; margin-top: 8px; color: var(--green-dark);
-      font-size: 14px; text-decoration: none;
+    .contact-actions .button:first-child:hover {
+      background: linear-gradient(100deg, #07234b 0%, #064f84 34%, #118cad 68%, #43b9bf 100%);
+      transform: translateY(-2px);
     }
+    .contact-actions .button-outline {
+      background: linear-gradient(#fff, #fff) padding-box,
+                  linear-gradient(100deg, #092b5b 0%, #075f9d 34%, #159fc4 68%, #55cbd0 100%) border-box;
+      border: 2px solid transparent;
+      color: #17466d;
+    }
+    .contact-actions .button-outline:hover {
+      background: linear-gradient(#f2fbfd, #f2fbfd) padding-box,
+                  linear-gradient(100deg, #092b5b 0%, #075f9d 34%, #159fc4 68%, #55cbd0 100%) border-box;
+      color: #092b5b;
+      transform: translateY(-2px);
+    }
+    .contact-email, .contact-phone {
+      display: block; color: #159fc4;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      transition: color .2s ease;
+    }
+    .contact-email { margin-top: 20px; }
+    .contact-phone { margin-top: 8px; }
+    .contact-email:hover, .contact-phone:hover { color: #075f9d; text-decoration: underline; }
 
     /* PIE */
     footer { border-top: 1px solid var(--line); padding: 28px 0; color: #858a86; font-size: 12px; }
@@ -294,6 +369,7 @@
       .hero h1 { font-size: 40px; }
       .value-strip-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
       .about, .solutions, .process, .contact { padding: 70px 0; }
+      .brand-statement { padding: 65px 0; }
       .about::before { width: 250px; height: 250px; right: -65px; }
       .solution-grid, .process-grid { grid-template-columns: 1fr; }
       .solution-card { min-height: auto; }
@@ -336,9 +412,9 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow" data-es="MPT CONSULTORIA" data-ca="MPT CONSULTORIA">MPT CONSULTORIA</span>
-          <h1 data-es="Soluciones digitales. <span>Más tiempo para tu negocio.</span>"
-              data-ca="Solucions digitals. <span>Més temps per al teu negoci.</span>">
-            Soluciones digitales. <span>Más tiempo para tu negocio.</span>
+          <h1 data-es="Soluciones digitales. <span class='accent'>Más tiempo</span> para tu negocio."
+              data-ca="Solucions digitals. <span class='accent'>Més temps</span> per al teu negoci.">
+            Soluciones digitales. <span class="accent">Más tiempo</span> para tu negocio.
           </h1>
           <p data-es="Ayudamos a autónomos y pequeños negocios a mejorar su presencia digital, atender consultas y simplificar tareas del día a día con soluciones prácticas y adaptadas a cada actividad."
              data-ca="Ajudem autònoms i petits negocis a millorar la seva presència digital, atendre consultes i simplificar tasques del dia a dia amb solucions pràctiques i adaptades a cada activitat.">
@@ -366,9 +442,9 @@
       <div class="container">
         <div class="about-content">
           <span class="eyebrow" data-es="QUÉ HACEMOS" data-ca="QUÈ FEM">QUÉ HACEMOS</span>
-          <h2 data-es="La tecnología tiene sentido cuando resuelve una necesidad real."
-              data-ca="La tecnologia té sentit quan resol una necessitat real.">
-            La tecnología tiene sentido cuando resuelve una necesidad real.
+          <h2 data-es="La tecnología tiene sentido cuando resuelve una <span class='accent'>necesidad real.</span>"
+              data-ca="La tecnologia té sentit quan resol una <span class='accent'>necessitat real.</span>">
+            La tecnología tiene sentido cuando resuelve una <span class="accent">necesidad real.</span>
           </h2>
           <p data-es="En MPT Consultoria desarrollamos soluciones digitales para autónomos y pequeños negocios que quieren mejorar cómo se presentan en internet, cómo atienden a sus clientes y cómo gestionan determinadas tareas."
              data-ca="A MPT Consultoria desenvolupem solucions digitals per a autònoms i petits negocis que volen millorar com es presenten a internet, com atenen els seus clients i com gestionen determinades tasques.">
@@ -386,9 +462,9 @@
       <div class="container">
         <div class="solutions-heading">
           <span class="eyebrow" data-es="SOLUCIONES" data-ca="SOLUCIONS">SOLUCIONES</span>
-          <h2 data-es="Herramientas digitales para hacer más fácil tu día a día."
-              data-ca="Eines digitals per fer més fàcil el teu dia a dia.">
-            Herramientas digitales para hacer más fácil tu día a día.
+          <h2 data-es="Herramientas digitales para hacer más fácil tu <span class='accent'>día a día.</span>"
+              data-ca="Eines digitals per fer més fàcil el teu <span class='accent'>dia a dia.</span>">
+            Herramientas digitales para hacer más fácil tu <span class="accent">día a día.</span>
           </h2>
           <p data-es="Cada proyecto se adapta a la actividad y a las necesidades del negocio. Definimos previamente qué se puede hacer, qué herramientas encajan y qué límites o costes pueden existir."
              data-ca="Cada projecte s'adapta a l'activitat i a les necessitats del negoci. Definim prèviament què es pot fer, quines eines encaixen i quins límits o costos poden existir.">
@@ -399,68 +475,68 @@
         <div class="solution-grid">
           <article class="solution-card">
             <span class="solution-number">01 / PRESENCIA DIGITAL</span>
-            <img class="solution-image" src="01-peluqueria.jpg" alt="Imagen de una peluquería" loading="lazy">
-            <h3 data-es="Páginas web" data-ca="Pàgines web">Páginas web</h3>
-            <p data-es="Creación o mejora de páginas web claras y adaptadas a la actividad del negocio, para presentar sus servicios y facilitar el contacto con clientes."
-               data-ca="Creació o millora de pàgines web clares i adaptades a l'activitat del negoci, per presentar els seus serveis i facilitar el contacte amb clients.">
-              Creación o mejora de páginas web claras y adaptadas a la actividad del negocio, para presentar sus servicios y facilitar el contacto con clientes.
+            <img class="solution-image" src="01-peluqueria.jpg" alt="Peluquera consultando la web profesional de su salón en un portátil" loading="lazy">
+            <h3 data-es="Tu negocio, con una imagen profesional en Internet" data-ca="El teu negoci, amb una imatge professional a Internet">Tu negocio, con una imagen profesional en Internet</h3>
+            <p data-es="Creamos webs modernas, atractivas y adaptadas a tu negocio para que tus clientes conozcan lo que ofreces, encuentren fácilmente la información y puedan contactar contigo."
+               data-ca="Creem webs modernes, atractives i adaptades al teu negoci perquè els teus clients coneguin què ofereixes, trobin fàcilment la informació i puguin contactar amb tu.">
+              Creamos webs modernas, atractivas y adaptadas a tu negocio para que tus clientes conozcan lo que ofreces, encuentren fácilmente la información y puedan contactar contigo.
             </p>
             <div class="deliverable">
               <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
-              <span data-es="Estructura de contenidos, diseño de páginas, adaptación a móvil y vías de contacto."
-                    data-ca="Estructura de continguts, disseny de pàgines, adaptació a mòbil i vies de contacte.">
-                Estructura de contenidos, diseño de páginas, adaptación a móvil y vías de contacto.
+              <span data-es="Diseño personalizado, presentación de servicios, contacto, adaptación a móviles y una web pensada para transmitir confianza."
+                    data-ca="Disseny personalitzat, presentació de serveis, contacte, adaptació a mòbils i una web pensada per transmetre confiança.">
+                Diseño personalizado, presentación de servicios, contacto, adaptación a móviles y una web pensada para transmitir confianza.
               </span>
             </div>
           </article>
 
           <article class="solution-card">
             <span class="solution-number">02 / ATENCIÓN AL CLIENTE</span>
-            <img class="solution-image" src="02-veterinaria.jpg" alt="Imagen de una clínica veterinaria" loading="lazy">
-            <h3 data-es="Asistentes conversacionales" data-ca="Assistents conversacionals">Asistentes conversacionales</h3>
-            <p data-es="Asistentes de consulta para responder preguntas frecuentes, orientar a los visitantes y ayudarles a encontrar la información que necesitan."
-               data-ca="Assistents de consulta per respondre preguntes freqüents, orientar els visitants i ajudar-los a trobar la informació que necessiten.">
-              Asistentes de consulta para responder preguntas frecuentes, orientar a los visitantes y ayudarles a encontrar la información que necesitan.
+            <img class="solution-image" src="02-veterinaria.jpg" alt="Veterinaria atendiendo a un perro mientras un asistente inteligente responde consultas" loading="lazy">
+            <h3 data-es="Atiende a tus clientes, incluso cuando estás ocupado" data-ca="Atén els teus clients, fins i tot quan estàs ocupat">Atiende a tus clientes, incluso cuando estás ocupado</h3>
+            <p data-es="Asistentes inteligentes por chat o voz que responden consultas, explican tus servicios y ofrecen información de tu negocio, ayudándote a atender mejor sin tener que estar pendiente de cada mensaje."
+               data-ca="Assistents intel·ligents per xat o veu que responen consultes, expliquen els teus serveis i ofereixen informació del teu negoci, ajudant-te a atendre millor sense haver d'estar pendent de cada missatge.">
+              Asistentes inteligentes por chat o voz que responden consultas, explican tus servicios y ofrecen información de tu negocio, ayudándote a atender mejor sin tener que estar pendiente de cada mensaje.
             </p>
             <div class="deliverable">
               <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
-              <span data-es="Base de información revisada, configuración del asistente y pruebas de respuesta."
-                    data-ca="Base d'informació revisada, configuració de l'assistent i proves de resposta.">
-                Base de información revisada, configuración del asistente y pruebas de respuesta.
+              <span data-es="Asistente personalizado, respuestas a preguntas frecuentes, información de servicios, configuración y pruebas."
+                    data-ca="Assistent personalitzat, respostes a preguntes freqüents, informació de serveis, configuració i proves.">
+                Asistente personalizado, respuestas a preguntas frecuentes, información de servicios, configuración y pruebas.
               </span>
             </div>
           </article>
 
           <article class="solution-card">
             <span class="solution-number">03 / COMUNICACIÓN Y SOLICITUDES</span>
-            <img class="solution-image" src="03-tienda-ropa.jpg" alt="Imagen de una tienda de ropa" loading="lazy">
-            <h3 data-es="WhatsApp y gestión de solicitudes" data-ca="WhatsApp i gestió de sol·licituds">WhatsApp y gestión de solicitudes</h3>
-            <p data-es="Propuestas para facilitar el contacto con el negocio y organizar consultas, peticiones o solicitudes de reserva, según las herramientas disponibles."
-               data-ca="Propostes per facilitar el contacte amb el negoci i organitzar consultes, peticions o sol·licituds de reserva, segons les eines disponibles.">
-              Propuestas para facilitar el contacto con el negocio y organizar consultas, peticiones o solicitudes de reserva, según las herramientas disponibles.
+            <img class="solution-image" src="03-tienda-ropa.jpg" alt="Dependienta atendiendo a una clienta mientras gestiona una consulta desde el móvil" loading="lazy">
+            <h3 data-es="No pierdas solicitudes por falta de tiempo" data-ca="No perdis sol·licituds per falta de temps">No pierdas solicitudes por falta de tiempo</h3>
+            <p data-es="Facilitamos la gestión de consultas, reservas, pedidos y solicitudes a través de WhatsApp y otros canales. Organiza mejor la comunicación con tus clientes y evita que las oportunidades se queden sin atender."
+               data-ca="Facilitem la gestió de consultes, reserves, comandes i sol·licituds a través de WhatsApp i altres canals. Organitza millor la comunicació amb els teus clients i evita que les oportunitats quedin sense atendre.">
+              Facilitamos la gestión de consultas, reservas, pedidos y solicitudes a través de WhatsApp y otros canales. Organiza mejor la comunicación con tus clientes y evita que las oportunidades se queden sin atender.
             </p>
             <div class="deliverable">
               <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
-              <span data-es="Enlaces de contacto, formularios, registro de solicitudes y avisos. Las reservas se confirman según el sistema acordado."
-                    data-ca="Enllaços de contacte, formularis, registre de sol·licituds i avisos. Les reserves es confirmen segons el sistema acordat.">
-                Enlaces de contacto, formularios, registro de solicitudes y avisos. Las reservas se confirman según el sistema acordado.
+              <span data-es="Formularios, recepción y registro de solicitudes, avisos, organización de consultas y soluciones adaptadas a tu negocio."
+                    data-ca="Formularis, recepció i registre de sol·licituds, avisos, organització de consultes i solucions adaptades al teu negoci.">
+                Formularios, recepción y registro de solicitudes, avisos, organización de consultas y soluciones adaptadas a tu negocio.
               </span>
             </div>
           </article>
 
           <article class="solution-card">
-            <span class="solution-number">04 / PROCESOS</span>
-            <img class="solution-image" src="04-floristeria.jpg" alt="Imagen de una floristería" loading="lazy">
-            <h3 data-es="Automatización de tareas" data-ca="Automatització de tasques">Automatización de tareas</h3>
-            <p data-es="Simplificación de tareas repetitivas mediante la conexión de herramientas digitales compatibles, siempre que el proceso sea viable."
-               data-ca="Simplificació de tasques repetitives mitjançant la connexió d'eines digitals compatibles, sempre que el procés sigui viable.">
-              Simplificación de tareas repetitivas mediante la conexión de herramientas digitales compatibles, siempre que el proceso sea viable.
+            <span class="solution-number">04 / COMUNICACIÓN DIGITAL</span>
+            <img class="solution-image" src="04-floristeria.jpg" alt="Florista preparando contenido promocional para redes sociales con su móvil" loading="lazy">
+            <h3 data-es="Haz que tu negocio destaque en redes" data-ca="Fes que el teu negoci destaqui a les xarxes">Haz que tu negocio destaque en redes</h3>
+            <p data-es="Creamos contenido e ideas promocionales con ayuda de IA para dar visibilidad a tu negocio, comunicar lo que ofreces y mantener una presencia digital atractiva sin que crear contenido se convierta en otra tarea interminable."
+               data-ca="Creem contingut i idees promocionals amb l'ajuda de la IA per donar visibilitat al teu negoci, comunicar què ofereixes i mantenir una presència digital atractiva sense que crear contingut es converteixi en una altra tasca interminable.">
+              Creamos contenido e ideas promocionales con ayuda de IA para dar visibilidad a tu negocio, comunicar lo que ofreces y mantener una presencia digital atractiva sin que crear contenido se convierta en otra tarea interminable.
             </p>
             <div class="deliverable">
               <strong data-es="Qué puede incluir" data-ca="Què pot incloure">Qué puede incluir</strong>
-              <span data-es="Diseño de un flujo concreto, configuración, pruebas e instrucciones básicas de uso."
-                    data-ca="Disseny d'un flux concret, configuració, proves i instruccions bàsiques d'ús.">
-                Diseño de un flujo concreto, configuración, pruebas e instrucciones básicas de uso.
+              <span data-es="Publicaciones, imágenes, vídeos, ideas creativas, textos promocionales y planificación de contenidos."
+                    data-ca="Publicacions, imatges, vídeos, idees creatives, textos promocionals i planificació de continguts.">
+                Publicaciones, imágenes, vídeos, ideas creativas, textos promocionales y planificación de contenidos.
               </span>
             </div>
           </article>
@@ -468,13 +544,28 @@
       </div>
     </section>
 
+
+
+    <section class="brand-statement" aria-label="MPT Consultoria">
+      <div class="container brand-statement-inner">
+        <h2 data-es="La IA cambia las <span class='accent'>posibilidades</span> de tu negocio."
+            data-ca="La IA canvia les <span class='accent'>possibilitats</span> del teu negoci.">
+          La IA cambia las <span class="accent">posibilidades</span> de tu negocio.
+        </h2>
+        <p data-es="Ahora puedes acceder a soluciones digitales profesionales sin necesitar los presupuestos de una gran empresa."
+           data-ca="Ara pots accedir a solucions digitals professionals sense necessitar els pressupostos d'una gran empresa.">
+          Ahora puedes acceder a soluciones digitales profesionales sin necesitar los presupuestos de una gran empresa.
+        </p>
+      </div>
+    </section>
+
     <section class="process" id="metodo">
       <div class="container">
         <div class="process-heading">
           <span class="eyebrow" data-es="CÓMO TRABAJAMOS" data-ca="COM TREBALLEM">CÓMO TRABAJAMOS</span>
-          <h2 data-es="Primero probamos. Después, si lo autorizas, implantamos."
-              data-ca="Primer fem proves. Després, si ho autoritzes, implementem.">
-            Primero probamos. Después, si lo autorizas, implantamos.
+          <h2 data-es="Primero probamos. Después, si lo autorizas, <span class='accent'>implantamos.</span>"
+              data-ca="Primer fem proves. Després, si ho autoritzes, <span class='accent'>implementem.</span>">
+            Primero probamos. Después, si lo autorizas, <span class="accent">implantamos.</span>
           </h2>
         </div>
 
@@ -516,9 +607,9 @@
       </div>
       <div class="human-copy">
         <span class="eyebrow" data-es="TECNOLOGÍA CON SENTIDO" data-ca="TECNOLOGIA AMB SENTIT">TECNOLOGÍA CON SENTIDO</span>
-        <h2 data-es="La solución debe adaptarse a tu negocio. No al revés."
-            data-ca="La solució s'ha d'adaptar al teu negoci. No a l'inrevés.">
-          La solución debe adaptarse a tu negocio. No al revés.
+        <h2 data-es="La solución debe adaptarse a tu negocio. <span class='accent'>No al revés.</span>"
+            data-ca="La solució s'ha d'adaptar al teu negoci. <span class='accent'>No a l'inrevés.</span>">
+          La solución debe adaptarse a tu negocio. <span class="accent">No al revés.</span>
         </h2>
         <p data-es="Trabajamos con herramientas adecuadas a cada caso. Antes de avanzar, explicamos qué puede hacer la solución, cuáles son sus límites y si existen costes o requisitos externos."
            data-ca="Treballem amb eines adequades a cada cas. Abans d'avançar, expliquem què pot fer la solució, quins són els seus límits i si hi ha costos o requisits externs.">
@@ -530,23 +621,23 @@
     <section class="contact" id="contacto">
       <div class="container contact-inner">
         <span class="eyebrow" data-es="SIGUIENTE PASO" data-ca="PAS SEGÜENT">SIGUIENTE PASO</span>
-        <h2 data-es="Cuéntanos qué necesitas mejorar en tu negocio."
-            data-ca="Explica'ns què necessites millorar al teu negoci.">
-          Cuéntanos qué necesitas mejorar en tu negocio.
+        <h2 data-es="Cuéntanos qué necesitas <span class='accent'>mejorar</span> en tu negocio."
+            data-ca="Explica'ns què necessites <span class='accent'>millorar</span> al teu negoci.">
+          Cuéntanos qué necesitas <span class="accent">mejorar</span> en tu negocio.
         </h2>
         <p data-es="Explícanos brevemente qué necesitas. Valoraremos si podemos ayudarte y, antes de empezar, concretaremos la solución, su alcance y las condiciones."
            data-ca="Explica'ns breument què necessites. Valorarem si et podem ajudar i, abans de començar, concretarem la solució, el seu abast i les condicions.">
           Explícanos brevemente qué necesitas. Valoraremos si podemos ayudarte y, antes de empezar, concretaremos la solución, su alcance y las condiciones.
         </p>
         <div class="contact-actions">
-          <a class="button" href="https://wa.me/34699068773"
+          <a class="button" href="https://wa.me/34930070886"
              target="_blank" rel="noopener noreferrer"
              data-es="Contactar por WhatsApp" data-ca="Contactar per WhatsApp">Contactar por WhatsApp</a>
           <a class="button button-outline" href="mailto:mptiabcn@gmail.com?subject=Consulta%20MPT%20Consultoria"
              data-es="Enviar un correo" data-ca="Enviar un correu">Enviar un correo</a>
         </div>
         <a class="contact-email" href="mailto:mptiabcn@gmail.com">mptiabcn@gmail.com</a>
-        <a class="contact-phone" href="https://wa.me/34699068773" target="_blank" rel="noopener noreferrer">WhatsApp: 699 068 773</a>
+        <a class="contact-phone" href="https://wa.me/34930070886" target="_blank" rel="noopener noreferrer">WhatsApp: 930 070 886</a>
       </div>
     </section>
   </main>
@@ -554,9 +645,9 @@
   <footer>
     <div class="container footer-inner">
       <span>© 2026 MPT Consultoria</span>
-      <span data-es="Web · Asistentes · WhatsApp · Automatización"
-            data-ca="Web · Assistents · WhatsApp · Automatització">
-        Web · Asistentes · WhatsApp · Automatización
+      <span data-es="Web · Asistentes inteligentes · WhatsApp · Marketing digital con IA"
+            data-ca="Web · Assistents intel·ligents · WhatsApp · Màrqueting digital amb IA">
+        Web · Asistentes inteligentes · WhatsApp · Marketing digital con IA
       </span>
     </div>
   </footer>
@@ -584,7 +675,7 @@
     <div class="mpt-chat-quick">
       <button type="button" data-question="servicios" data-es="Servicios" data-ca="Serveis">Servicios</button>
       <button type="button" data-question="web" data-es="Páginas web" data-ca="Pàgines web">Páginas web</button>
-      <button type="button" data-question="asistente" data-es="Chatbots" data-ca="Xatbots">Chatbots</button>
+      <button type="button" data-question="asistente" data-es="Asistentes inteligentes" data-ca="Assistents intel·ligents">Asistentes inteligentes</button>
       <button type="button" data-question="precio" data-es="Precios" data-ca="Preus">Precios</button>
       <button type="button" data-question="contacto" data-es="Contactar" data-ca="Contactar">Contactar</button>
     </div>
@@ -627,28 +718,28 @@
 
     const mptChatCopy = {
       es: {
-        servicios: 'MPT trabaja en cuatro ámbitos: páginas web, asistentes conversacionales para consultas frecuentes, gestión de solicitudes y automatización de tareas. Cada propuesta se estudia según las necesidades y herramientas del negocio.',
+        servicios: 'MPT trabaja en cuatro ámbitos: desarrollo web, asistentes inteligentes mediante chat o voz, gestión de solicitudes a través de WhatsApp y marketing digital con IA. Cada propuesta se estudia según las necesidades y herramientas del negocio.',
         web: 'Podemos crear o mejorar una página web para presentar tu negocio, explicar tus servicios y facilitar el contacto. El alcance se concreta después de revisar qué necesitas.',
         asistente: 'Podemos preparar un asistente para orientar a los visitantes y responder preguntas frecuentes utilizando información revisada del negocio. Esta versión de la web es una demostración con respuestas predefinidas; no utiliza IA generativa ni consulta una base de datos externa.',
         whatsapp: 'Podemos estudiar formas de facilitar el contacto por WhatsApp y organizar solicitudes. Las automatizaciones avanzadas pueden depender de WhatsApp Business Platform y de sus condiciones o costes. MPT no accede a tu cuenta personal sin autorización.',
         reservas: 'Podemos estudiar formularios para recibir solicitudes de reserva y sistemas de disponibilidad. Una solicitud no equivale a una reserva confirmada: el funcionamiento se define y prueba antes de implantarlo.',
-        automatizacion: 'Analizamos tareas repetitivas y valoramos si pueden simplificarse conectando herramientas compatibles. Antes de proponer una solución revisamos su viabilidad, límites y posibles costes.',
+        automatizacion: 'La automatización puede formar parte de algunos proyectos como apoyo técnico. Estudiamos su necesidad y viabilidad dentro de la solución acordada, sin ofrecerla como servicio independiente en nuestro catálogo actual.',
         precio: 'No publicamos un precio único porque depende del alcance, las herramientas y los requisitos de cada proyecto. Primero revisamos la necesidad y después presentamos una propuesta con condiciones y posibles costes.',
         metodo: 'Trabajamos en tres fases: análisis y demostración en un entorno independiente; validación y acuerdo del alcance; e implantación únicamente con autorización expresa.',
-        contacto: 'Puedes escribir a mptiabcn@gmail.com o contactar por WhatsApp en el 699 068 773. También puedes utilizar los botones de contacto de esta página.',
+        contacto: 'Puedes escribir a mptiabcn@gmail.com o contactar por WhatsApp en el 930 070 886. También puedes utilizar los botones de contacto de esta página.',
         fallback: 'No tengo información suficiente para responder con seguridad a esa consulta. Puedes escribir a mptiabcn@gmail.com y revisaremos tu caso.'
       },
 
       ca: {
-        servicios: 'MPT treballa en quatre àmbits: pàgines web, assistents conversacionals per a consultes freqüents, gestió de sol·licituds i automatització de tasques. Cada proposta s’estudia segons les necessitats i les eines del negoci.',
+        servicios: 'MPT treballa en quatre àmbits: desenvolupament web, assistents intel·ligents mitjançant xat o veu, gestió de sol·licituds a través de WhatsApp i màrqueting digital amb IA. Cada proposta s’estudia segons les necessitats i les eines del negoci.',
         web: 'Podem crear o millorar una pàgina web per presentar el teu negoci, explicar els teus serveis i facilitar el contacte. L’abast es concreta després de revisar què necessites.',
         asistente: 'Podem preparar un assistent per orientar els visitants i respondre preguntes freqüents utilitzant informació revisada del negoci. Aquesta versió del web és una demostració amb respostes predefinides; no utilitza IA generativa ni consulta una base de dades externa.',
         whatsapp: 'Podem estudiar maneres de facilitar el contacte per WhatsApp i organitzar sol·licituds. Les automatitzacions avançades poden dependre de WhatsApp Business Platform i de les seves condicions o costos. MPT no accedeix al teu compte personal sense autorització.',
         reservas: 'Podem estudiar formularis per rebre sol·licituds de reserva i sistemes de disponibilitat. Una sol·licitud no equival a una reserva confirmada: el funcionament es defineix i es prova abans d’implantar-lo.',
-        automatizacion: 'Analitzem tasques repetitives i valorem si es poden simplificar connectant eines compatibles. Abans de proposar una solució revisem la seva viabilitat, els límits i els possibles costos.',
+        automatizacion: 'L’automatització pot formar part d’alguns projectes com a suport tècnic. Estudiem la seva necessitat i viabilitat dins de la solució acordada, sense oferir-la com a servei independent en el nostre catàleg actual.',
         precio: 'No publiquem un preu únic perquè depèn de l’abast, les eines i els requisits de cada projecte. Primer revisem la necessitat i després presentem una proposta amb les condicions i els possibles costos.',
         metodo: 'Treballem en tres fases: anàlisi i demostració en un entorn independent; validació i acord de l’abast; i implementació únicament amb autorització expressa.',
-        contacto: 'Pots escriure a mptiabcn@gmail.com o contactar per WhatsApp al 699 068 773. També pots utilitzar els botons de contacte d’aquesta pàgina.',
+        contacto: 'Pots escriure a mptiabcn@gmail.com o contactar per WhatsApp al 930 070 886. També pots utilitzar els botons de contacte d’aquesta pàgina.',
         fallback: 'No tinc prou informació per respondre amb seguretat aquesta consulta. Pots escriure a mptiabcn@gmail.com i revisarem el teu cas.'
       }
     };
